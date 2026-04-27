@@ -19,6 +19,20 @@ def _stable_key(prefix: str, *parts: object) -> str:
     return f"{prefix}:{hashlib.sha256(text.encode('utf-8')).hexdigest()[:24]}"
 
 
+AUTOMATED_REVIEW_MARKERS = [
+    "bot",
+    "app",
+    "github-actions",
+    "copilot",
+    "codex",
+    "openai",
+    "automated",
+    "reviewer",
+]
+
+FAILED_CI_STATES = {"FAILURE", "ERROR", "CANCELLED", "TIMED_OUT", "ACTION_REQUIRED"}
+
+
 def _as_int(value: Any) -> int | None:
     if value in (None, ""):
         return None
@@ -34,6 +48,42 @@ def _as_bool(value: Any) -> bool:
     if isinstance(value, str):
         return value.strip().lower() in {"1", "true", "yes", "y"}
     return bool(value)
+
+
+def _author_login(node: dict[str, Any]) -> str:
+    author = node.get("author") or {}
+    return str(author.get("login") or "")
+
+
+def _author_type(node: dict[str, Any]) -> str:
+    author = node.get("author") or {}
+    return str(author.get("__typename") or "")
+
+
+def is_likely_automated_review_comment(node: dict[str, Any]) -> bool:
+    text = " ".join(
+        [
+            _author_login(node),
+            _author_type(node),
+            str(node.get("body") or ""),
+        ]
+    ).lower()
+    return any(marker in text for marker in AUTOMATED_REVIEW_MARKERS)
+
+
+def _review_comment_identity(node: dict[str, Any]) -> str:
+    return str(
+        node.get("id")
+        or node.get("databaseId")
+        or "|".join(
+            [
+                _author_login(node),
+                str(node.get("path") or ""),
+                str(node.get("line") or node.get("originalLine") or ""),
+                str(node.get("body") or ""),
+            ]
+        )
+    )
 
 
 def _first_text(markdown: str, fallback: str) -> str:
@@ -133,6 +183,90 @@ def parse_review_fixture(path: Path) -> ReviewDigest:
     )
 
 
+def build_review_digest_from_gh_data(
+    data: dict[str, Any],
+    *,
+    owner: str,
+    repo: str,
+    pr_number: int,
+) -> ReviewDigest:
+    repository = f"{owner}/{repo}"
+    pull_request = (((data.get("data") or {}).get("repository") or {}).get("pullRequest") or {})
+    action_items: list[ReviewActionItem] = []
+    comment_ids: list[str] = []
+    seen_comments: set[str] = set()
+
+    review_threads = ((pull_request.get("reviewThreads") or {}).get("nodes") or [])
+    for thread in review_threads:
+        comments = ((thread.get("comments") or {}).get("nodes") or [])
+        for comment in comments:
+            if not isinstance(comment, dict) or not is_likely_automated_review_comment(comment):
+                continue
+            identity = _review_comment_identity(comment)
+            if identity in seen_comments:
+                continue
+            seen_comments.add(identity)
+            comment_id = str(comment.get("id") or comment.get("databaseId") or identity)
+            if comment_id:
+                comment_ids.append(comment_id)
+            line = _as_int(comment.get("line")) or _as_int(comment.get("originalLine"))
+            path = comment.get("path")
+            title = f"Automated review comment from {_author_login(comment) or 'unknown author'}"
+            if path:
+                title = f"{title} on {path}"
+            action_items.append(
+                ReviewActionItem(
+                    title=title,
+                    severity="medium",
+                    file=path,
+                    line=line,
+                    original_comment=str(comment.get("body") or ""),
+                    suggested_local_agent_action=(
+                        "Review this automated PR comment and make the smallest relevant code or test "
+                        "change, unless owner approval is required."
+                    ),
+                )
+            )
+
+    issue_comments = ((pull_request.get("comments") or {}).get("nodes") or [])
+    for comment in issue_comments:
+        if not isinstance(comment, dict) or not is_likely_automated_review_comment(comment):
+            continue
+        identity = _review_comment_identity(comment)
+        if identity in seen_comments:
+            continue
+        seen_comments.add(identity)
+        comment_id = str(comment.get("id") or comment.get("databaseId") or identity)
+        if comment_id:
+            comment_ids.append(comment_id)
+        action_items.append(
+            ReviewActionItem(
+                title=f"Automated PR comment from {_author_login(comment) or 'unknown author'}",
+                severity="medium",
+                original_comment=str(comment.get("body") or ""),
+                suggested_local_agent_action=(
+                    "Review this automated PR comment and make the smallest relevant code or test "
+                    "change, unless owner approval is required."
+                ),
+            )
+        )
+
+    summary = (
+        f"Found {len(action_items)} likely automated review or issue comments for {repository} PR #{pr_number}."
+    )
+    dedupe_key = _stable_key("gh_review", repository, pr_number, ",".join(sorted(comment_ids)))
+    return ReviewDigest(
+        source="gh_cli",
+        repository=repository,
+        pr_number=pr_number,
+        review_id=",".join(sorted(comment_ids)) or None,
+        summary=summary,
+        action_items=action_items,
+        raw_source_path=f"gh://{repository}/pull/{pr_number}/reviews",
+        dedupe_key=dedupe_key,
+    )
+
+
 def parse_ci_fixture(path: Path) -> CIDigest:
     path = path.expanduser()
     suffix = path.suffix.lower()
@@ -178,6 +312,97 @@ def parse_ci_fixture(path: Path) -> CIDigest:
         ],
         raw_source_path=str(path),
         dedupe_key=_stable_key("ci", path.name, markdown),
+    )
+
+
+def _ci_identity(node: dict[str, Any]) -> str:
+    return str(
+        node.get("databaseId")
+        or node.get("name")
+        or node.get("context")
+        or node.get("detailsUrl")
+        or node.get("targetUrl")
+        or ""
+    )
+
+
+def build_ci_digest_from_gh_data(
+    data: dict[str, Any],
+    *,
+    owner: str,
+    repo: str,
+    pr_number: int,
+) -> CIDigest:
+    repository = f"{owner}/{repo}"
+    pull_request = (((data.get("data") or {}).get("repository") or {}).get("pullRequest") or {})
+    commits = ((pull_request.get("commits") or {}).get("nodes") or [])
+    latest_commit = (commits[-1].get("commit") if commits else {}) or {}
+    rollup = latest_commit.get("statusCheckRollup") or {}
+    contexts = ((rollup.get("contexts") or {}).get("nodes") or [])
+
+    failures: list[CIFailureItem] = []
+    failed_ids: list[str] = []
+    seen_contexts: set[str] = set()
+    for context in contexts:
+        if not isinstance(context, dict):
+            continue
+        identity = _ci_identity(context)
+        typename = context.get("__typename")
+        if typename == "CheckRun":
+            conclusion = str(context.get("conclusion") or context.get("status") or "").upper()
+            if conclusion not in FAILED_CI_STATES:
+                continue
+            if identity in seen_contexts:
+                continue
+            seen_contexts.add(identity)
+            failed_ids.append(identity)
+            app = ((context.get("checkSuite") or {}).get("app") or {}).get("name")
+            job_name = str(context.get("name") or "CI check")
+            failures.append(
+                CIFailureItem(
+                    job_name=job_name,
+                    step_name=str(app) if app else None,
+                    status=conclusion.lower(),
+                    error_excerpt=str(context.get("detailsUrl") or "No details URL provided."),
+                    suspected_cause="GitHub reported this check as failed or cancelled.",
+                    suggested_local_agent_action=(
+                        "Inspect the failing check output and make the smallest relevant code or test "
+                        "change, unless owner approval is required."
+                    ),
+                )
+            )
+        elif typename == "StatusContext":
+            state = str(context.get("state") or "").upper()
+            if state not in FAILED_CI_STATES:
+                continue
+            if identity in seen_contexts:
+                continue
+            seen_contexts.add(identity)
+            failed_ids.append(identity)
+            failures.append(
+                CIFailureItem(
+                    job_name=str(context.get("context") or "CI status"),
+                    status=state.lower(),
+                    error_excerpt=str(context.get("description") or context.get("targetUrl") or ""),
+                    suspected_cause="GitHub reported this status context as failed or cancelled.",
+                    suggested_local_agent_action=(
+                        "Inspect the failing status output and make the smallest relevant code or test "
+                        "change, unless owner approval is required."
+                    ),
+                )
+            )
+
+    summary = f"Found {len(failures)} failed or cancelled CI checks for {repository} PR #{pr_number}."
+    check_run_id = ",".join(sorted(filter(None, failed_ids))) or None
+    return CIDigest(
+        source="gh_cli",
+        repository=repository,
+        pr_number=pr_number,
+        check_run_id=check_run_id,
+        summary=summary,
+        failures=failures,
+        raw_source_path=f"gh://{repository}/pull/{pr_number}/checks",
+        dedupe_key=_stable_key("gh_ci", repository, pr_number, check_run_id),
     )
 
 

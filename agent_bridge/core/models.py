@@ -84,6 +84,8 @@ class BridgeState(BaseModel):
     cycle: int = 0
     max_cycles: int = 5
     max_runtime_seconds: int = 3600
+    loop_started_at: str | None = None
+    last_loop_event: str | None = None
     last_seen_review_ids: list[str] = Field(default_factory=list)
     last_seen_comment_ids: list[str] = Field(default_factory=list)
     last_seen_check_run_ids: list[str] = Field(default_factory=list)

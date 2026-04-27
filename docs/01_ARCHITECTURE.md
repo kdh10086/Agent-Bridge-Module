@@ -34,3 +34,49 @@ CI Watcher ──────────┘
 ## Key Invariant
 
 No module except Dispatcher may control local coding agent input.
+
+## Run-Loop Orchestrator
+
+The run-loop orchestrator coordinates bounded automation cycles.
+
+It may:
+
+- load and persist bridge state;
+- stop on `safety_pause`;
+- enforce max-cycle and max-runtime limits;
+- wait between cycles using a configured polling interval;
+- call producer watchers;
+- inspect `CommandQueue`;
+- call Dispatcher in dry-run mode.
+
+It must not:
+
+- send commands directly to the local coding agent;
+- bypass `CommandQueue`;
+- perform GUI automation;
+- send Gmail;
+- mutate GitHub;
+- auto-fix code;
+- auto-merge or push commits.
+
+All producers still enqueue commands. Dispatcher remains the sole sender.
+
+## GitHub CLI Adapter
+
+The real GitHub CLI adapter is read-only.
+
+It may use `gh` to read:
+
+- PR review comments;
+- PR issue comments;
+- PR status check rollups.
+
+It must not:
+
+- write GitHub comments;
+- create pull requests;
+- commit or push changes;
+- auto-fix code;
+- dispatch commands to the local coding agent.
+
+GitHub review and CI watchers only write canonical digest files and enqueue commands. Dispatcher remains the only sender.

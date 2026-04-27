@@ -8,9 +8,7 @@ Respond with one of:
 2. requested fixes,
 3. user decision request.
 
-If owner approval is required, start your response with:
-
-NEEDS_USER_DECISION
+If owner approval is required, clearly request a user decision before giving any implementation command.
 
 Agent report:
 

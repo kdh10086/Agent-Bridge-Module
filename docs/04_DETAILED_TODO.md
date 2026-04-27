@@ -21,6 +21,16 @@
 - [ ] Ensure portable files avoid project-specific assumptions.
 - [ ] Add instructions for copying into target project.
 
+## Portable Installer
+
+- [ ] Add `install-portable --target`.
+- [ ] Add dry-run output.
+- [ ] Refuse overwrite unless `--force`.
+- [ ] Add optional `--no-include-agents-snippet`.
+- [ ] Add `verify-portable --target`.
+- [ ] Confirm installed portable self-test works from target root.
+- [ ] Confirm installer does not modify target files outside `.agent-bridge/` and optional snippet.
+
 ## Dogfooding
 
 - [ ] Simulate local agent report.
@@ -36,4 +46,15 @@
 - [ ] GitHub watcher.
 - [ ] CI watcher.
 - [ ] Gmail draft.
-- [ ] run-loop.
+
+## Continuous Run Loop
+
+- [x] Add bounded `run-loop` command.
+- [x] Enforce max cycles.
+- [x] Enforce max runtime.
+- [x] Enforce polling interval.
+- [x] Stop on `safety_pause`.
+- [x] Dispatch only through Dispatcher in dry-run mode.
+- [x] Log structured run-loop events.
+- [ ] GUI bridge.
+- [ ] Gmail draft.

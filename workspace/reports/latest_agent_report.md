@@ -1,102 +1,98 @@
-# Agent Report: File-Based GitHub Review and CI Digest Producer Adapters
+# Agent Report: GUI Activation Retest with Full Access
 
 ## Summary
 
-Implemented file-based digest producer adapters for review and CI inputs. The adapters parse local JSON or markdown fixtures, normalize them into provider-neutral digest models, write canonical markdown digests under `workspace/inbox/`, and enqueue commands into `CommandQueue`. They do not dispatch, call provider APIs, call `gh`, automate a GUI, send email, or modify downstream project code.
+Retested ChatGPT and Codex app resolution/activation from the Codex execution context after Full Access was enabled.
 
-## Files Inspected
+Full Access changed the previous failure: AppleScript can now resolve and activate both ChatGPT and Codex from this process. No full GUI roundtrip was run. No paste, submit, GitHub, Gmail, push, merge, or downstream source-code action was attempted.
 
-- `AGENTS.md`
-- `CODEX_START_HERE.md`
-- `docs/01_ARCHITECTURE.md`
-- `docs/02_PORTABLE_MODULE_DESIGN.md`
-- `docs/03_IMPLEMENTATION_PLAN.md`
-- `docs/04_DETAILED_TODO.md`
-- `docs/05_SELF_TEST_AND_DOGFOOD_PROTOCOL.md`
-- `docs/06_SAFETY_AND_APPROVAL_GATES.md`
-- `docs/07_CLI_SPEC.md`
-- `docs/08_CODEX_MASTER_PROMPT.md`
-- `workspace/reports/latest_agent_report.md`
-- `agent_bridge/core/models.py`
-- `agent_bridge/core/command_queue.py`
-- `agent_bridge/core/event_log.py`
-- `agent_bridge/cli.py`
-- `agent_bridge/github/__init__.py`
-- `tests/*`
-- `fixtures/*`
+## Commands Run
 
-## Files Changed
+- `.venv/bin/python -m agent_bridge.cli preflight-external-runner`
+- `.venv/bin/python -m agent_bridge.cli preflight-gui-apps --pm-app "ChatGPT" --activate`
+- `.venv/bin/python -m agent_bridge.cli preflight-gui-apps --local-agent-app "Codex" --activate`
+- `osascript -e 'id of application "ChatGPT"'`
+- `osascript -e 'tell application "ChatGPT" to activate'`
+- `osascript -e 'id of application "Codex"'`
+- `osascript -e 'tell application "Codex" to activate'`
+- `env | rg '^(CODEX_SANDBOX|CODEX_SHELL|CODEX_THREAD_ID)=' || true`
 
-- `agent_bridge/core/models.py`: added `ReviewDigest`, `ReviewActionItem`, `CIDigest`, and `CIFailureItem`; fixed default command priority materialization.
-- `agent_bridge/github/digest_builder.py`: added JSON/markdown fixture parsers and canonical markdown builders.
-- `agent_bridge/github/review_watcher.py`: added file-based review digest producer that writes `workspace/inbox/github_review_digest.md` and enqueues `GITHUB_REVIEW_FIX`.
-- `agent_bridge/github/ci_watcher.py`: added file-based CI digest producer that writes `workspace/inbox/ci_failure_digest.md` and enqueues `CI_FAILURE_FIX`.
-- `agent_bridge/cli.py`: added `ingest-review` and `ingest-ci` CLI commands.
-- `fixtures/fake_github_review.json`: added generic review fixture.
-- `fixtures/fake_ci_failure.json`: added generic CI failure fixture.
-- `tests/test_digest_builder.py`: added parser and markdown builder tests.
-- `tests/test_file_based_watchers.py`: added producer enqueue, priority, dedupe, and user-decision propagation tests.
-- `docs/07_CLI_SPEC.md`: documented the new file-based ingest commands.
-- `workspace/reports/latest_agent_report.md`: wrote this milestone report.
+## Codex Environment Markers
 
-## CLI Commands Verified
+- `CODEX_SANDBOX`: not set.
+- `CODEX_SHELL`: set.
+- `CODEX_THREAD_ID`: set.
 
-- `.venv/bin/python -m agent_bridge.cli --help`
-- `.venv/bin/python -m agent_bridge.cli ingest-review --help`
-- `.venv/bin/python -m agent_bridge.cli ingest-ci --help`
-- `.venv/bin/python -m agent_bridge.cli init --force`
-- `.venv/bin/python -m agent_bridge.cli ingest-review --fixture fixtures/fake_github_review.json --dry-run`
-- `.venv/bin/python -m agent_bridge.cli ingest-review --fixture fixtures/fake_github_review.json`
-- `.venv/bin/python -m agent_bridge.cli ingest-ci --fixture fixtures/fake_ci_failure.json --dry-run`
-- `.venv/bin/python -m agent_bridge.cli ingest-ci --fixture fixtures/fake_ci_failure.json`
-- `.venv/bin/python -m agent_bridge.cli queue list`
+The previous sandbox marker most directly tied to restricted execution, `CODEX_SANDBOX`, is no longer present. The process still has Codex session markers.
 
-## Producer Behavior Verified
+## ChatGPT Resolution And Activation
 
-- Review producer writes `workspace/inbox/github_review_digest.md`.
-- Review producer enqueues `GITHUB_REVIEW_FIX` with priority `70`.
-- CI producer writes `workspace/inbox/ci_failure_digest.md`.
-- CI producer enqueues `CI_FAILURE_FIX` with priority `80`.
-- Re-ingesting the same fixture is deduped by stable dedupe key.
-- `requires_user_decision` in review action items is propagated to `command.requires_user_approval`.
-- Producers leave no `workspace/queue/in_progress.json`; they do not dispatch.
+`preflight-external-runner` result:
 
-## Tests Run
+- AppleScript resolution for `ChatGPT`: succeeded.
+- Resolved id: `com.google.Chrome.app.cadlkienfkclaiaibeoongdcgmdikeeg`.
 
-- `.venv/bin/python -m pytest`
-- `.venv/bin/ruff check .`
-- `PATH="$PWD/.venv/bin:$PATH" bash scripts/self_test.sh`
-- `bash portable_module/.agent-bridge/scripts/self_test.sh`
+`preflight-gui-apps --pm-app "ChatGPT" --activate` result:
 
-## Test Results
+- Activation succeeded.
+- Winning strategy: AppleScript.
 
-- `pytest`: 13 passed.
-- `ruff`: all checks passed.
-- Standalone self-test: passed.
-- Portable self-test: passed.
+Direct AppleScript checks:
 
-## Safety and Architecture Verification
+- `id of application "ChatGPT"` succeeded.
+- `tell application "ChatGPT" to activate` succeeded.
 
-The producer-queue-dispatcher rule is preserved. `review_watcher` and `ci_watcher` only parse local files, write canonical digest markdown, append audit log events, and enqueue commands. Dispatcher remains the only component that can build and send local-agent prompts. No real GitHub polling, `gh` calls, GUI automation, Gmail sending, continuous run-loop automation, or downstream project implementation was added.
+Note: the resolved id is a Chrome app wrapper id, not `com.openai.chat`, even though `config/local.yaml` still includes `/Applications/ChatGPT.app` and `com.openai.chat` as fallback metadata.
 
-## Canonical Digest Outputs
+## Codex Resolution And Activation
 
-- `workspace/inbox/github_review_digest.md`
-- `workspace/inbox/ci_failure_digest.md`
+`preflight-external-runner` result:
 
-Portable module equivalent paths remain:
+- AppleScript resolution for `Codex`: succeeded.
+- Resolved id: `com.openai.codex`.
 
-- `.agent-bridge/workspace/inbox/github_review_digest.md`
-- `.agent-bridge/workspace/inbox/ci_failure_digest.md`
+`preflight-gui-apps --local-agent-app "Codex" --activate` result:
+
+- Activation succeeded.
+- Winning strategy: AppleScript.
+
+Direct AppleScript checks:
+
+- `id of application "Codex"` succeeded.
+- `tell application "Codex" to activate` succeeded.
+
+## Full Access Impact
+
+Full Access resolved the prior LaunchServices/AppleScript activation blocker for both targets.
+
+Previous behavior:
+
+- AppleScript could not resolve ChatGPT or Codex.
+- Activation failed before any GUI handoff could be attempted.
+
+Current behavior:
+
+- AppleScript resolves ChatGPT and Codex.
+- AppleScript activates ChatGPT and Codex.
+- Clipboard tools are available at `/usr/bin/pbcopy` and `/usr/bin/pbpaste`.
+
+## Roundtrip Retry Assessment
+
+The activation-specific blocker is cleared.
+
+However, the current `preflight-external-runner` still classifies this process as a Codex context because `CODEX_SHELL` and `CODEX_THREAD_ID` remain set. As currently implemented, `scripts/run_gui_roundtrip_external.sh` would still refuse to run if launched from this process.
+
+`dogfood-report-roundtrip` can now be retried safely from an app-activation perspective, but it was not run in this task. The safest next step is one of:
+
+1. Run `bash scripts/run_gui_roundtrip_external.sh` from a normal macOS Terminal.
+2. In a follow-up task, refine external-runner sandbox detection so Full Access mode without `CODEX_SANDBOX` is treated separately from restricted Codex sandbox mode.
 
 ## Known Limitations
 
-- The parsers are MVP file parsers for JSON fixtures and simple markdown digests.
-- Real provider adapters are not implemented.
-- Real GitHub API polling and `gh` CLI integration are not implemented.
-- Portable scripts still use the existing portable self-test path; they do not yet wrap the new Python ingest commands.
-- Continuous run-loop automation remains intentionally out of scope.
+This task only retested activation. It did not validate paste, submit, PM response capture, prompt extraction, queue handoff, or local Codex submission.
+
+The ChatGPT target resolves to a Chrome app wrapper id in AppleScript. If that is the intended PM assistant surface, no change is required. If the native ChatGPT app is required, target metadata may need a separate follow-up.
 
 ## Next Recommended Task
 
-Add portable script wrappers for `ingest-review` and `ingest-ci`, then add documentation showing how a target project can drop review and CI digest files into `.agent-bridge/workspace/inbox/` without enabling real provider polling.
+Run a bounded one-cycle GUI roundtrip from normal Terminal, or first update external-runner sandbox detection to distinguish Full Access from restricted sandbox execution.

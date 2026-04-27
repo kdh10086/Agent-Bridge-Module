@@ -12,5 +12,8 @@ Rules:
 [Command Type]
 {command_type}
 
+[Command Source]
+{source}
+
 [Payload]
 {payload}

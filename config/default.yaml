@@ -11,13 +11,19 @@ limits:
   polling_interval_seconds: 15
 
 apps:
-  local_agent:
-    app_name: "Codex"
-    submit_key: "enter"
-
   pm_assistant:
     app_name: "Google Chrome"
-    submit_key: "enter"
+    app_path: null
+    bundle_id: null
+    window_hint: "ChatGPT"
+    paste_instruction: "Paste into the ChatGPT composer, then review manually. Do not submit automatically."
+
+  local_agent:
+    app_name: "Codex"
+    app_path: null
+    bundle_id: null
+    window_hint: "Agent Bridge"
+    paste_instruction: "Paste into Codex input, then review manually. Do not submit automatically."
 
 github:
   owner: ""

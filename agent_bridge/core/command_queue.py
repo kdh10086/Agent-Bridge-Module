@@ -50,6 +50,18 @@ class CommandQueue:
         self.in_progress_path.write_text(command.model_dump_json(indent=2), encoding="utf-8")
         return command
 
+    def pop_by_id(self, command_id: str) -> Command | None:
+        pending = self.list_pending()
+        for index, command in enumerate(pending):
+            if command.id != command_id:
+                continue
+            pending.pop(index)
+            command.status = CommandStatus.IN_PROGRESS
+            self._write_jsonl(self.pending_path, pending)
+            self.in_progress_path.write_text(command.model_dump_json(indent=2), encoding="utf-8")
+            return command
+        return None
+
     def get_in_progress(self) -> Command | None:
         if not self.in_progress_path.exists():
             return None

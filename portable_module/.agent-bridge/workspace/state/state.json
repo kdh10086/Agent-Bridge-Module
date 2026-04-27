@@ -1,1 +1,11 @@
-{"state":"IDLE","safety_pause":false,"cycle":0,"max_cycles":5,"max_runtime_seconds":3600}
+{
+  "state": "PAUSED_FOR_USER_DECISION",
+  "safety_pause": true,
+  "updated_at": "2026-04-27T07:57:01.417374+00:00",
+  "blocked_command_id": "cmd_5504d333f696",
+  "matched_keywords": [
+    "NEEDS_USER_DECISION",
+    "RISK_HIGH",
+    "DATA_MIGRATION"
+  ]
+}

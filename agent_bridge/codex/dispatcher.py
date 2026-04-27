@@ -1,11 +1,26 @@
+from dataclasses import dataclass
 from pathlib import Path
 from rich.console import Console
 from agent_bridge.codex.prompt_builder import PromptBuilder
 from agent_bridge.core.command_queue import CommandQueue
 from agent_bridge.core.event_log import EventLog
-from agent_bridge.core.models import BridgeStateName, SafetyDecision
+from agent_bridge.core.models import BridgeStateName, Command, SafetyDecision
 from agent_bridge.core.safety_gate import SafetyGate
 from agent_bridge.core.state_store import StateStore
+
+
+LOCAL_AGENT_PROMPT_PATH = "next_local_agent_prompt.md"
+
+
+@dataclass(frozen=True)
+class DispatchPromptResult:
+    prompt_path: Path
+    prompt: str
+    command: Command | None
+    staged: bool
+    consumed: bool = False
+    blocked: bool = False
+    reason: str | None = None
 
 
 class Dispatcher:
@@ -26,25 +41,41 @@ class Dispatcher:
         self.event_log = event_log or EventLog(workspace_dir / "logs" / "bridge.jsonl")
         self.state_store = state_store or StateStore(workspace_dir / "state" / "state.json")
 
-    def dispatch_next(self, dry_run: bool = True) -> str | None:
-        command = self.queue.pop_next()
+    def _next_pending_command(self) -> Command | None:
+        pending = sorted(self.queue.list_pending(), key=lambda c: (-(c.priority or 0), c.created_at))
+        return pending[0] if pending else None
+
+    def _resolve_payload_path(self, payload_path: str) -> Path:
+        path = Path(payload_path)
+        if path.is_absolute():
+            return path
+        return self.workspace_dir.parent / path
+
+    def prepare_next_local_agent_prompt(self, *, consume: bool, dry_run: bool = True) -> DispatchPromptResult:
+        prompt_path = self.workspace_dir / "outbox" / LOCAL_AGENT_PROMPT_PATH
+        command = self.queue.pop_next() if consume else self._next_pending_command()
         if command is None:
-            self.event_log.append("dispatch_no_pending")
-            self.console.print("[yellow]No pending commands.[/yellow]")
-            return None
+            self.event_log.append("dispatch_no_pending" if consume else "local_agent_prompt_stage_no_pending")
+            return DispatchPromptResult(
+                prompt_path=prompt_path,
+                prompt="",
+                command=None,
+                staged=False,
+                consumed=False,
+                reason="No pending commands.",
+            )
 
-        self.event_log.append(
-            "dispatch_started",
-            command_id=command.id,
-            command_type=command.type.value,
-            dry_run=dry_run,
-        )
-        payload_path = Path(command.payload_path)
-        if not payload_path.is_absolute():
-            payload_path = self.workspace_dir.parent / payload_path
-        payload = payload_path.read_text(encoding="utf-8")
+        if consume:
+            self.event_log.append(
+                "dispatch_started",
+                command_id=command.id,
+                command_type=command.type.value,
+                dry_run=dry_run,
+            )
 
-        decision = self.safety_gate.check_text(payload)
+        payload = self._resolve_payload_path(command.payload_path).read_text(encoding="utf-8")
+        prompt = self.prompt_builder.build_local_agent_command(command, payload)
+        decision = self.safety_gate.check_text(prompt)
         if command.requires_user_approval and decision.allowed:
             decision = SafetyDecision(
                 allowed=False,
@@ -53,24 +84,66 @@ class Dispatcher:
             )
 
         if not decision.allowed:
-            self.safety_gate.write_decision_request(self.workspace_dir, decision, payload)
+            self.safety_gate.write_decision_request(self.workspace_dir, decision, prompt)
+            prompt_path.unlink(missing_ok=True)
             state = self.state_store.load()
             state.safety_pause = True
             state.state = BridgeStateName.PAUSED_FOR_USER_DECISION
             self.state_store.save(state)
-            self.queue.fail_in_progress("Blocked by safety gate.")
+            if consume:
+                self.queue.fail_in_progress("Blocked by safety gate.")
+                self.event_log.append(
+                    "dispatch_blocked",
+                    command_id=command.id,
+                    matched_keywords=decision.matched_keywords,
+                )
             self.event_log.append(
-                "dispatch_blocked",
+                "local_agent_dispatch_blocked_by_safety",
                 command_id=command.id,
                 matched_keywords=decision.matched_keywords,
+                prompt_path=str(prompt_path),
+                consumed=consume,
             )
+            return DispatchPromptResult(
+                prompt_path=prompt_path,
+                prompt=prompt,
+                command=command,
+                staged=False,
+                consumed=consume,
+                blocked=True,
+                reason=decision.reason,
+            )
+
+        prompt_path.parent.mkdir(parents=True, exist_ok=True)
+        prompt_path.write_text(prompt, encoding="utf-8")
+        self.event_log.append(
+            "local_agent_prompt_staged",
+            command_id=command.id,
+            command_type=command.type.value,
+            prompt_path=str(prompt_path),
+            consumed=consume,
+            dry_run=dry_run,
+        )
+        return DispatchPromptResult(
+            prompt_path=prompt_path,
+            prompt=prompt,
+            command=command,
+            staged=True,
+            consumed=consume,
+        )
+
+    def dispatch_next(self, dry_run: bool = True) -> str | None:
+        self.event_log.append("local_agent_dispatch_requested", dry_run=dry_run, consume=True)
+        result = self.prepare_next_local_agent_prompt(consume=True, dry_run=dry_run)
+        if result.command is None:
+            self.console.print("[yellow]No pending commands.[/yellow]")
+            return None
+        if result.blocked:
             self.console.print("[red]Command blocked by safety gate.[/red]")
             return None
-
-        prompt = self.prompt_builder.build_local_agent_command(command, payload)
         if dry_run:
-            self.event_log.append("dispatch_dry_run_prompt_built", command_id=command.id)
+            self.event_log.append("dispatch_dry_run_prompt_built", command_id=result.command.id)
             self.console.print("[bold cyan]DRY RUN: local-agent prompt[/bold cyan]")
-            self.console.print(prompt)
-            return prompt
+            self.console.print(result.prompt)
+            return result.prompt
         raise NotImplementedError("Real GUI dispatch is intentionally not implemented in MVP.")
