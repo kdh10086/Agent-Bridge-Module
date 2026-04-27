@@ -1,0 +1,20 @@
+{
+  "source": "ci_fixture",
+  "repository": "example/repository",
+  "pr_number": 42,
+  "check_run_id": "check-2001",
+  "detected_at": "2026-04-27T00:05:00Z",
+  "summary": "The test job failed in a deterministic unit test.",
+  "dedupe_key": "ci:example-repository:42:check-2001",
+  "failures": [
+    {
+      "job_name": "test",
+      "step_name": "pytest",
+      "status": "failed",
+      "error_excerpt": "AssertionError: expected command priority 80",
+      "suspected_cause": "The test fixture expects CI failure commands to outrank review fixes.",
+      "suggested_local_agent_action": "Inspect command priority configuration and update the failing test or implementation.",
+      "requires_user_decision": false
+    }
+  ]
+}

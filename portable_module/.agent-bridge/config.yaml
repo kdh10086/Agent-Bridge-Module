@@ -1,0 +1,23 @@
+project:
+  mode: portable
+  workspace_dir: .agent-bridge/workspace
+
+limits:
+  idle_seconds: 10
+  max_cycles: 5
+  max_runtime_seconds: 3600
+
+safety:
+  hard_stop_keywords:
+    - NEEDS_USER_DECISION
+    - APPROVAL_REQUIRED
+    - RISK_HIGH
+    - PAID_API
+    - LICENSE_UNKNOWN
+    - PRIVACY_RISK
+    - MAIN_MERGE
+    - DATA_MIGRATION
+    - ARCHITECTURE_CHANGE
+    - DELETE_OR_REWRITE_LARGE_SCOPE
+    - CI_FAILED_REPEATEDLY
+    - MAX_CYCLE_REACHED

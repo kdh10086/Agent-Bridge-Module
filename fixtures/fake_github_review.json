@@ -1,0 +1,20 @@
+{
+  "source": "github_review_fixture",
+  "repository": "example/repository",
+  "pr_number": 42,
+  "review_id": "review-1001",
+  "detected_at": "2026-04-27T00:00:00Z",
+  "summary": "Review comments request a small test coverage update.",
+  "dedupe_key": "review:example-repository:42:review-1001",
+  "action_items": [
+    {
+      "title": "Add command queue dedupe coverage",
+      "severity": "medium",
+      "file": "tests/test_command_queue.py",
+      "line": 12,
+      "original_comment": "Please prove duplicate command dedupe keys are ignored.",
+      "suggested_local_agent_action": "Add or update a focused test for duplicate queue dedupe behavior.",
+      "requires_user_decision": false
+    }
+  ]
+}

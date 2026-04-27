@@ -1,0 +1,2 @@
+[console_scripts]
+agent-bridge = agent_bridge.cli:app

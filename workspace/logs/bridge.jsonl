@@ -1,0 +1,40 @@
+{"timestamp": "2026-04-27T07:26:32.643817+00:00", "event_type": "init", "metadata": {"force": true}}
+{"timestamp": "2026-04-27T07:26:35.909518+00:00", "event_type": "fixture_report_loaded", "metadata": {"fixture": "fixtures/fake_agent_report.md"}}
+{"timestamp": "2026-04-27T07:26:35.909926+00:00", "event_type": "pm_prompt_built", "metadata": {}}
+{"timestamp": "2026-04-27T07:26:35.910694+00:00", "event_type": "pm_command_enqueued", "metadata": {"command_id": "cmd_619576a6d513"}}
+{"timestamp": "2026-04-27T07:26:44.588260+00:00", "event_type": "pm_prompt_built", "metadata": {}}
+{"timestamp": "2026-04-27T07:26:44.588567+00:00", "event_type": "pm_command_enqueued", "metadata": {"command_id": "cmd_303e589b2613"}}
+{"timestamp": "2026-04-27T07:29:05.968339+00:00", "event_type": "init", "metadata": {"force": true}}
+{"timestamp": "2026-04-27T07:29:08.982405+00:00", "event_type": "fixture_report_loaded", "metadata": {"fixture": "fixtures/fake_agent_report.md"}}
+{"timestamp": "2026-04-27T07:29:08.982701+00:00", "event_type": "pm_prompt_built", "metadata": {}}
+{"timestamp": "2026-04-27T07:29:08.982991+00:00", "event_type": "pm_command_enqueued", "metadata": {"command_id": "cmd_5d0d275fe7df"}}
+{"timestamp": "2026-04-27T07:29:17.180902+00:00", "event_type": "dispatch_started", "metadata": {"command_id": "cmd_5d0d275fe7df", "command_type": "CHATGPT_PM_NEXT_TASK", "dry_run": true}}
+{"timestamp": "2026-04-27T07:29:17.181806+00:00", "event_type": "dispatch_dry_run_prompt_built", "metadata": {"command_id": "cmd_5d0d275fe7df"}}
+{"timestamp": "2026-04-27T07:29:22.412167+00:00", "event_type": "pm_prompt_built", "metadata": {}}
+{"timestamp": "2026-04-27T07:29:22.412950+00:00", "event_type": "pm_command_enqueued", "metadata": {"command_id": "cmd_faa2f7910259"}}
+{"timestamp": "2026-04-27T07:29:40.985156+00:00", "event_type": "init", "metadata": {"force": true}}
+{"timestamp": "2026-04-27T07:29:41.073471+00:00", "event_type": "fixture_report_loaded", "metadata": {"fixture": "fixtures/fake_agent_report.md"}}
+{"timestamp": "2026-04-27T07:29:41.073677+00:00", "event_type": "pm_prompt_built", "metadata": {}}
+{"timestamp": "2026-04-27T07:29:41.073927+00:00", "event_type": "pm_command_enqueued", "metadata": {"command_id": "cmd_a5b1420cffd3"}}
+{"timestamp": "2026-04-27T07:29:41.247602+00:00", "event_type": "dispatch_started", "metadata": {"command_id": "cmd_a5b1420cffd3", "command_type": "CHATGPT_PM_NEXT_TASK", "dry_run": true}}
+{"timestamp": "2026-04-27T07:29:41.247779+00:00", "event_type": "dispatch_dry_run_prompt_built", "metadata": {"command_id": "cmd_a5b1420cffd3"}}
+{"timestamp": "2026-04-27T07:29:41.334947+00:00", "event_type": "pm_prompt_built", "metadata": {}}
+{"timestamp": "2026-04-27T07:29:41.335239+00:00", "event_type": "pm_command_enqueued", "metadata": {"command_id": "cmd_a0eb81db87a6"}}
+{"timestamp": "2026-04-27T07:38:06.519274+00:00", "event_type": "init", "metadata": {"force": true}}
+{"timestamp": "2026-04-27T07:38:09.672411+00:00", "event_type": "github_review_digest_ingested", "metadata": {"added": true, "command_id": "cmd_6891db0acaee", "digest_path": "/Users/kimdohyeong/Desktop/agent-bridge-portable-handoff/workspace/inbox/github_review_digest.md", "dedupe_key": "review:example-repository:42:review-1001"}}
+{"timestamp": "2026-04-27T07:38:13.750963+00:00", "event_type": "github_review_digest_ingested", "metadata": {"added": false, "command_id": "cmd_1fcad6e395f2", "digest_path": "/Users/kimdohyeong/Desktop/agent-bridge-portable-handoff/workspace/inbox/github_review_digest.md", "dedupe_key": "review:example-repository:42:review-1001"}}
+{"timestamp": "2026-04-27T07:38:16.759121+00:00", "event_type": "ci_failure_digest_ingested", "metadata": {"added": true, "command_id": "cmd_658ef7880381", "digest_path": "/Users/kimdohyeong/Desktop/agent-bridge-portable-handoff/workspace/inbox/ci_failure_digest.md", "dedupe_key": "ci:example-repository:42:check-2001"}}
+{"timestamp": "2026-04-27T07:38:20.992430+00:00", "event_type": "ci_failure_digest_ingested", "metadata": {"added": false, "command_id": "cmd_f25c18fffe1e", "digest_path": "/Users/kimdohyeong/Desktop/agent-bridge-portable-handoff/workspace/inbox/ci_failure_digest.md", "dedupe_key": "ci:example-repository:42:check-2001"}}
+{"timestamp": "2026-04-27T07:38:47.921799+00:00", "event_type": "init", "metadata": {"force": true}}
+{"timestamp": "2026-04-27T07:38:48.017241+00:00", "event_type": "fixture_report_loaded", "metadata": {"fixture": "fixtures/fake_agent_report.md"}}
+{"timestamp": "2026-04-27T07:38:48.017747+00:00", "event_type": "pm_prompt_built", "metadata": {}}
+{"timestamp": "2026-04-27T07:38:48.019277+00:00", "event_type": "pm_command_enqueued", "metadata": {"command_id": "cmd_dff23e9b9551"}}
+{"timestamp": "2026-04-27T07:38:48.207801+00:00", "event_type": "dispatch_started", "metadata": {"command_id": "cmd_dff23e9b9551", "command_type": "CHATGPT_PM_NEXT_TASK", "dry_run": true}}
+{"timestamp": "2026-04-27T07:38:48.208401+00:00", "event_type": "dispatch_dry_run_prompt_built", "metadata": {"command_id": "cmd_dff23e9b9551"}}
+{"timestamp": "2026-04-27T07:38:48.300766+00:00", "event_type": "pm_prompt_built", "metadata": {}}
+{"timestamp": "2026-04-27T07:38:48.301070+00:00", "event_type": "pm_command_enqueued", "metadata": {"command_id": "cmd_ccd2ae279bf7"}}
+{"timestamp": "2026-04-27T07:39:38.681875+00:00", "event_type": "init", "metadata": {"force": true}}
+{"timestamp": "2026-04-27T07:39:38.775455+00:00", "event_type": "github_review_digest_ingested", "metadata": {"added": true, "command_id": "cmd_f015dbf69e7d", "digest_path": "/Users/kimdohyeong/Desktop/agent-bridge-portable-handoff/workspace/inbox/github_review_digest.md", "dedupe_key": "review:example-repository:42:review-1001"}}
+{"timestamp": "2026-04-27T07:39:38.871951+00:00", "event_type": "github_review_digest_ingested", "metadata": {"added": false, "command_id": "cmd_b5fbce334299", "digest_path": "/Users/kimdohyeong/Desktop/agent-bridge-portable-handoff/workspace/inbox/github_review_digest.md", "dedupe_key": "review:example-repository:42:review-1001"}}
+{"timestamp": "2026-04-27T07:39:38.964116+00:00", "event_type": "ci_failure_digest_ingested", "metadata": {"added": true, "command_id": "cmd_d9b20d20d1da", "digest_path": "/Users/kimdohyeong/Desktop/agent-bridge-portable-handoff/workspace/inbox/ci_failure_digest.md", "dedupe_key": "ci:example-repository:42:check-2001"}}
+{"timestamp": "2026-04-27T07:39:39.058911+00:00", "event_type": "ci_failure_digest_ingested", "metadata": {"added": false, "command_id": "cmd_6d1377da8406", "digest_path": "/Users/kimdohyeong/Desktop/agent-bridge-portable-handoff/workspace/inbox/ci_failure_digest.md", "dedupe_key": "ci:example-repository:42:check-2001"}}

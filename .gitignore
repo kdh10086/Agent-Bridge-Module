@@ -1,0 +1,13 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+.env
+config/local.yaml
+workspace/state/*.tmp
+workspace/queue/*.tmp
+workspace/logs/*.log
+.agent-bridge/workspace/state/*.tmp
+.agent-bridge/workspace/queue/*.tmp
+.DS_Store

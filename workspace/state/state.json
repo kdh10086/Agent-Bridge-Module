@@ -1,0 +1,15 @@
+{
+  "current_task_id": null,
+  "current_pr": null,
+  "state": "IDLE",
+  "cycle": 0,
+  "max_cycles": 5,
+  "max_runtime_seconds": 3600,
+  "last_seen_review_ids": [],
+  "last_seen_comment_ids": [],
+  "last_seen_check_run_ids": [],
+  "safety_pause": false,
+  "last_error": null,
+  "started_at": "2026-04-27T07:39:38.681194+00:00",
+  "updated_at": "2026-04-27T07:39:38.681319+00:00"
+}

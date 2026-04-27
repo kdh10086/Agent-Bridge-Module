@@ -1,0 +1,4 @@
+{"timestamp":"2026-04-27T07:29:31Z","event_type":"portable_self_test_started","metadata":{}}
+{"timestamp":"2026-04-27T07:29:31Z","event_type":"portable_self_test_command_enqueued","metadata":{"command_id":"cmd_portable_self_test"}}
+{"timestamp":"2026-04-27T07:38:51Z","event_type":"portable_self_test_started","metadata":{}}
+{"timestamp":"2026-04-27T07:38:51Z","event_type":"portable_self_test_command_enqueued","metadata":{"command_id":"cmd_portable_self_test"}}
