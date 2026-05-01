@@ -8,14 +8,28 @@ source "${SCRIPT_DIR}/_common.sh"
 ab_require_python3
 ab_ensure_workspace
 
-rm -f \
-  "${AB_WORKSPACE}/queue/pending_commands.jsonl" \
-  "${AB_WORKSPACE}/queue/in_progress.json" \
-  "${AB_WORKSPACE}/inbox/github_review_digest.md" \
-  "${AB_WORKSPACE}/inbox/ci_failure_digest.md" \
-  "${AB_WORKSPACE}/inbox/user_decision_request.md" \
-  "${AB_WORKSPACE}/outbox/owner_decision_email.md" \
-  "${AB_WORKSPACE}/outbox/next_local_agent_prompt.md"
+AB_WORKSPACE="${AB_WORKSPACE}" AB_SCRIPT_DIR="${SCRIPT_DIR}" python3 - <<'PY'
+import os
+import sys
+from pathlib import Path
+
+sys.path.insert(0, os.environ["AB_SCRIPT_DIR"])
+from queue_lock import portable_queue_lock
+
+workspace = Path(os.environ["AB_WORKSPACE"])
+queue_dir = workspace / "queue"
+with portable_queue_lock(queue_dir):
+    for path in [
+        queue_dir / "pending_commands.jsonl",
+        queue_dir / "in_progress.json",
+        workspace / "inbox" / "github_review_digest.md",
+        workspace / "inbox" / "ci_failure_digest.md",
+        workspace / "inbox" / "user_decision_request.md",
+        workspace / "outbox" / "owner_decision_email.md",
+        workspace / "outbox" / "next_local_agent_prompt.md",
+    ]:
+        path.unlink(missing_ok=True)
+PY
 
 bash "${SCRIPT_DIR}/write_report.sh" "Portable Agent Bridge self-test report."
 bash "${SCRIPT_DIR}/ingest_review.sh" "${AB_BRIDGE_DIR}/fixtures/fake_review_digest.md" >/dev/null

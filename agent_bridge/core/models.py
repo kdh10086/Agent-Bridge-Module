@@ -4,7 +4,7 @@ from datetime import datetime, timezone
 from enum import Enum
 from typing import Any
 
-from pydantic import BaseModel, Field, field_validator
+from pydantic import BaseModel, Field, field_validator, model_validator
 
 
 def utc_now_iso() -> str:
@@ -18,6 +18,7 @@ class CommandType(str, Enum):
     USER_MANUAL_COMMAND = "USER_MANUAL_COMMAND"
     REQUEST_STATUS_REPORT = "REQUEST_STATUS_REPORT"
     STOP_AND_REPORT = "STOP_AND_REPORT"
+    TEST = "test"
 
 
 COMMAND_PRIORITIES: dict[CommandType, int] = {
@@ -27,6 +28,7 @@ COMMAND_PRIORITIES: dict[CommandType, int] = {
     CommandType.GITHUB_REVIEW_FIX: 70,
     CommandType.CHATGPT_PM_NEXT_TASK: 50,
     CommandType.REQUEST_STATUS_REPORT: 40,
+    CommandType.TEST: 0,
 }
 
 
@@ -57,12 +59,41 @@ class Command(BaseModel):
     created_at: str = Field(default_factory=utc_now_iso)
     task_id: str | None = None
     pr_number: int | None = None
-    payload_path: str
+    payload_path: str = ""
+    prompt_path: str | None = None
+    prompt_text: str | None = None
     requires_user_approval: bool = False
     safety_flags: list[str] = Field(default_factory=list)
     dedupe_key: str
     status: CommandStatus = CommandStatus.PENDING
     metadata: dict[str, Any] = Field(default_factory=dict)
+
+    @model_validator(mode="after")
+    def normalize_prompt_source(self) -> "Command":
+        has_text = self.prompt_text is not None
+        has_path = bool(self.prompt_path or self.payload_path)
+        if self.prompt_path and self.payload_path and self.prompt_path != self.payload_path:
+            raise ValueError("Command prompt_path and payload_path must match when both are set.")
+        if has_text and has_path:
+            raise ValueError("Command prompt source is ambiguous; use only prompt_text or prompt_path.")
+        if self.prompt_text == "":
+            raise ValueError("Command prompt_text must not be empty.")
+        if self.prompt_path and not self.payload_path:
+            self.payload_path = self.prompt_path
+        elif self.payload_path and self.prompt_path is None:
+            self.prompt_path = self.payload_path
+        if not self.payload_path and not self.prompt_text:
+            raise ValueError("Command requires prompt_path, payload_path, or prompt_text.")
+        return self
+
+    @field_validator("created_at")
+    @classmethod
+    def validate_created_at(cls, value: str) -> str:
+        try:
+            datetime.fromisoformat(value.replace("Z", "+00:00"))
+        except ValueError as error:
+            raise ValueError("Command created_at must be an ISO-8601 datetime.") from error
+        return value
 
     @field_validator("priority", mode="before")
     @classmethod
@@ -75,6 +106,13 @@ class Command(BaseModel):
         if isinstance(command_type, str):
             return COMMAND_PRIORITIES[CommandType(command_type)]
         return 0
+
+    @field_validator("priority")
+    @classmethod
+    def validate_priority(cls, value):
+        if isinstance(value, bool):
+            raise ValueError("Command priority must be an integer, not a boolean.")
+        return value
 
 
 class BridgeState(BaseModel):

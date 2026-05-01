@@ -36,7 +36,7 @@ def ingest_review_fixture(
         type=CommandType.GITHUB_REVIEW_FIX,
         source="github_review_watcher",
         pr_number=digest.pr_number,
-        payload_path=str(digest_path),
+        prompt_path=str(digest_path),
         requires_user_approval=any(item.requires_user_decision for item in digest.action_items),
         dedupe_key=digest.dedupe_key,
         metadata={
@@ -66,7 +66,7 @@ def command_from_review_digest(digest: ReviewDigest, digest_path: Path) -> Comma
         type=CommandType.GITHUB_REVIEW_FIX,
         source="github_review_watcher",
         pr_number=digest.pr_number,
-        payload_path=str(digest_path),
+        prompt_path=str(digest_path),
         requires_user_approval=any(item.requires_user_decision for item in digest.action_items),
         dedupe_key=digest.dedupe_key,
         metadata={

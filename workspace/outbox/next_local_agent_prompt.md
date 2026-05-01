@@ -12,27 +12,29 @@ Rules:
 - Stop and report if owner approval is required.
 
 [Command Type]
-CHATGPT_PM_NEXT_TASK
+USER_MANUAL_COMMAND
 
 [Command Source]
-pm_assistant
+pm_assistant_report_roundtrip
 
 [Payload]
-# PM Instruction
+Task ID: AB-REPORT-CHANGE-NO-ACTION-ACK
 
-Implement the next smallest step: add command queue persistence and tests.
+The latest report is a report-content change only and does not request implementation, tests, external actions, or follow-up work.
 
-## Scope
+No further bridge action is required.
 
-- JSONL pending queue
-- completed queue
-- failed queue
-- dedupe by key
-- priority ordering
+Do not modify source code.
+Avoid code changes.
+Do not mutate GitHub.
+Do not send Gmail.
+Do not push commits.
+Do not auto-merge.
+Do not run long or unbounded loops.
+Do not implement new features.
+Do not bypass SafetyGate.
+Do not bypass CommandQueue.
+Do not write or overwrite workspace/reports/latest_agent_report.md.
+Do not change any files.
 
-## Out of Scope
-
-- GUI automation
-- GitHub watcher
-- email sending
-
+Acknowledge internally that the report-only change was received, then stop.

@@ -10,7 +10,9 @@ from agent_bridge.gui.app_diagnostics import CommandDiagnostic
 from agent_bridge.gui.macos_apps import ManualStageTarget, Runner
 
 
-CODEX_SANDBOX_MARKERS = ("CODEX_SANDBOX", "CODEX_SHELL", "CODEX_THREAD_ID")
+CODEX_SANDBOX_HARD_BLOCK_MARKER = "CODEX_SANDBOX"
+CODEX_CONTEXT_WARNING_MARKERS = ("CODEX_SHELL", "CODEX_THREAD_ID")
+CODEX_SANDBOX_MARKERS = (CODEX_SANDBOX_HARD_BLOCK_MARKER, *CODEX_CONTEXT_WARNING_MARKERS)
 
 
 @dataclass(frozen=True)
@@ -26,6 +28,14 @@ class ExternalRunnerPreflight:
         return bool(self.codex_markers)
 
     @property
+    def restricted_codex_sandbox(self) -> bool:
+        return CODEX_SANDBOX_HARD_BLOCK_MARKER in self.codex_markers
+
+    @property
+    def full_access_codex_context(self) -> bool:
+        return bool(self.codex_markers) and not self.restricted_codex_sandbox
+
+    @property
     def clipboard_tools_available(self) -> bool:
         return bool(self.pbcopy_path and self.pbpaste_path)
 
@@ -35,7 +45,7 @@ class ExternalRunnerPreflight:
 
     @property
     def can_run_external_gui(self) -> bool:
-        return not self.running_inside_codex and self.clipboard_tools_available and self.apps_resolve
+        return not self.restricted_codex_sandbox and self.clipboard_tools_available and self.apps_resolve
 
 
 def detect_codex_sandbox(env: Mapping[str, str] | None = None) -> dict[str, str]:
@@ -112,7 +122,8 @@ def format_external_runner_preflight(preflight: ExternalRunnerPreflight) -> str:
         "# External GUI Runner Preflight",
         "",
         "## Codex Sandbox",
-        f"- Running inside Codex sandbox: {'yes' if preflight.running_inside_codex else 'no'}",
+        f"- Restricted Codex sandbox: {'yes' if preflight.restricted_codex_sandbox else 'no'}",
+        f"- Full Access Codex context: {'yes' if preflight.full_access_codex_context else 'no'}",
     ]
     if preflight.codex_markers:
         for key in sorted(preflight.codex_markers):
@@ -134,9 +145,10 @@ def format_external_runner_preflight(preflight: ExternalRunnerPreflight) -> str:
     lines.extend(_format_command_diagnostic(preflight.local_agent_resolution))
 
     lines.extend(["", "## Recommended Next Command"])
-    if preflight.running_inside_codex:
+    if preflight.restricted_codex_sandbox:
         lines.append(
-            "- Open a normal macOS Terminal, unset Codex sandbox environment markers, and run "
+            "- Restricted Codex sandbox detected. Open a normal macOS Terminal, unset Codex sandbox "
+            "environment markers, and run "
             "`bash scripts/run_gui_roundtrip_external.sh`."
         )
     elif not preflight.clipboard_tools_available:
@@ -147,7 +159,13 @@ def format_external_runner_preflight(preflight: ExternalRunnerPreflight) -> str:
             "`python -m agent_bridge.cli preflight-external-runner`."
         )
     else:
-        lines.append("- Run `bash scripts/run_gui_roundtrip_external.sh` from this normal Terminal.")
+        if preflight.full_access_codex_context:
+            lines.append(
+                "- Full Access Codex context detected. GUI roundtrip may run from this process because "
+                "`CODEX_SANDBOX` is not set and app/clipboard preflights passed."
+            )
+        else:
+            lines.append("- Run `bash scripts/run_gui_roundtrip_external.sh` from this normal Terminal.")
 
     lines.append("")
     lines.append("No paste, submit, Enter/Return, GitHub, or Gmail action was attempted.")

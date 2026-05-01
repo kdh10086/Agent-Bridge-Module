@@ -10,3 +10,7 @@ ruff>=0.6
 
 [gui]
 pyautogui>=0.9.54
+pillow>=10.0
+numpy>=1.26
+opencv-python>=4.9
+pytesseract>=0.3.13

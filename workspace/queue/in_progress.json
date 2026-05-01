@@ -1,0 +1,17 @@
+{
+  "id": "cmd_ad878abdbe48",
+  "type": "CHATGPT_PM_NEXT_TASK",
+  "priority": 50,
+  "source": "pm_assistant",
+  "created_at": "2026-04-30T23:50:59.837776+00:00",
+  "task_id": null,
+  "pr_number": null,
+  "payload_path": "/Users/kimdohyeong/Desktop/agent-bridge-portable-handoff/workspace/outbox/pm_instruction.md",
+  "prompt_path": "/Users/kimdohyeong/Desktop/agent-bridge-portable-handoff/workspace/outbox/pm_instruction.md",
+  "prompt_text": null,
+  "requires_user_approval": false,
+  "safety_flags": [],
+  "dedupe_key": "pm_response:3248148676582177126",
+  "status": "in_progress",
+  "metadata": {}
+}

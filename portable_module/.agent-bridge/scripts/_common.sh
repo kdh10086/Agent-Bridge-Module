@@ -5,6 +5,7 @@ AB_BRIDGE_DIR="$(cd "${AB_SCRIPT_DIR}/.." && pwd)"
 AB_PROJECT_ROOT="$(cd "${AB_BRIDGE_DIR}/.." && pwd)"
 AB_WORKSPACE="${AB_BRIDGE_DIR}/workspace"
 AB_QUEUE_FILE="${AB_WORKSPACE}/queue/pending_commands.jsonl"
+AB_QUEUE_LOCK_FILE="${AB_WORKSPACE}/queue/queue.lock"
 AB_LOG_FILE="${AB_WORKSPACE}/logs/bridge.jsonl"
 
 AB_HARD_STOP_KEYWORDS=(
@@ -74,4 +75,3 @@ ab_payload_actual_path() {
     printf '%s/%s\n' "${AB_PROJECT_ROOT}" "${payload_path}"
   fi
 }
-

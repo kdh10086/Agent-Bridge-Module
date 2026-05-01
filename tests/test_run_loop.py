@@ -4,7 +4,7 @@ import json
 from pathlib import Path
 
 from agent_bridge.core.command_queue import CommandQueue
-from agent_bridge.core.models import BridgeStateName, Command, CommandType
+from agent_bridge.core.models import BridgeStateName, Command, CommandStatus, CommandType
 from agent_bridge.core.state_store import StateStore
 from agent_bridge.orchestrator import RunLoop, RunLoopConfig
 
@@ -125,7 +125,8 @@ def test_run_loop_stops_when_dispatcher_triggers_safety_pause(tmp_path: Path):
     assert state.safety_pause
     assert "run_loop_safety_pause" in events
     assert (workspace / "inbox" / "user_decision_request.md").exists()
-    assert (workspace / "queue" / "failed_commands.jsonl").exists()
+    blocked_commands = CommandQueue(workspace / "queue").list_commands(CommandStatus.BLOCKED)
+    assert [command.id for command in blocked_commands] == ["cmd_test"]
 
 
 def test_run_loop_watcher_dry_run_does_not_mutate_queue(tmp_path: Path):

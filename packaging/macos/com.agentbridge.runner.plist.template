@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
+  "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.agentbridge.runner</string>
+
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/bash</string>
+    <string>-lc</string>
+    <string>cd /Users/kimdohyeong/Desktop/agent-bridge-portable-handoff &amp;&amp; source .venv/bin/activate &amp;&amp; python -m agent_bridge.cli run-external-gui-runner --auto-confirm --watch-reports --watch-queue --polling-interval-seconds 3 --max-runtime-seconds 3600</string>
+  </array>
+
+  <key>RunAtLoad</key>
+  <false/>
+
+  <key>KeepAlive</key>
+  <false/>
+
+  <key>StandardOutPath</key>
+  <string>/Users/kimdohyeong/Desktop/agent-bridge-portable-handoff/workspace/logs/external_gui_runner.launchagent.out.log</string>
+
+  <key>StandardErrorPath</key>
+  <string>/Users/kimdohyeong/Desktop/agent-bridge-portable-handoff/workspace/logs/external_gui_runner.launchagent.err.log</string>
+</dict>
+</plist>

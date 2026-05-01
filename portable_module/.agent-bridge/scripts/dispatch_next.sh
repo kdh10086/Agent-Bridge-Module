@@ -18,16 +18,23 @@ AB_PROJECT_ROOT="${AB_PROJECT_ROOT}" \
 AB_WORKSPACE="${AB_WORKSPACE}" \
 AB_QUEUE_FILE="${AB_QUEUE_FILE}" \
 AB_LOG_FILE="${AB_LOG_FILE}" \
+AB_QUEUE_DIR="${AB_WORKSPACE}/queue" \
+AB_SCRIPT_DIR="${SCRIPT_DIR}" \
 python3 - <<'PY'
 import json
 import os
+import sys
 from datetime import datetime, timezone
 from pathlib import Path
+
+sys.path.insert(0, os.environ["AB_SCRIPT_DIR"])
+from queue_lock import command_prompt_path, portable_queue_lock, read_jsonl
 
 project_root = Path(os.environ["AB_PROJECT_ROOT"])
 workspace = Path(os.environ["AB_WORKSPACE"])
 queue_file = Path(os.environ["AB_QUEUE_FILE"])
 log_file = Path(os.environ["AB_LOG_FILE"])
+queue_dir = Path(os.environ["AB_QUEUE_DIR"])
 prompt_path = workspace / "outbox" / "next_local_agent_prompt.md"
 template_path = workspace.parent / "templates" / "local_agent_command_wrapper.md"
 hard_stops = [
@@ -56,19 +63,28 @@ def log(event_type: str, **metadata: object) -> None:
         f.write(json.dumps(record, ensure_ascii=False) + "\n")
 
 def read_commands() -> list[dict]:
-    if not queue_file.exists():
-        return []
-    rows = []
-    for line in queue_file.read_text(encoding="utf-8").splitlines():
-        if line.strip():
-            rows.append(json.loads(line))
-    return rows
+    with portable_queue_lock(queue_dir):
+        return read_jsonl(queue_file)
 
 def resolve_payload(command: dict) -> Path:
-    payload_path = Path(command["payload_path"])
+    payload_source = command_prompt_path(command)
+    payload_path = Path(payload_source)
     if payload_path.is_absolute():
         return payload_path
     return project_root / payload_path
+
+def prompt_source_label(command: dict) -> str:
+    if command.get("prompt_text") is not None:
+        return "prompt_text"
+    if command.get("prompt_path"):
+        return "prompt_path"
+    return "payload_path"
+
+def command_payload_text(command: dict) -> str:
+    if command.get("prompt_text") is not None:
+        return str(command.get("prompt_text"))
+    payload_path = resolve_payload(command)
+    return payload_path.read_text(encoding="utf-8") if payload_path.exists() else ""
 
 commands = read_commands()
 if not commands:
@@ -77,8 +93,7 @@ if not commands:
     raise SystemExit(0)
 
 for command in commands:
-    payload_path = resolve_payload(command)
-    payload = payload_path.read_text(encoding="utf-8") if payload_path.exists() else ""
+    payload = command_payload_text(command)
     upper_payload = payload.upper()
     matched = [keyword for keyword in hard_stops if keyword in upper_payload]
     if command.get("requires_user_approval") and "APPROVAL_REQUIRED" not in matched:
@@ -97,14 +112,14 @@ for command in commands:
             "## Reason\n\nHard-stop keyword detected in a pending command payload.\n\n"
             f"## Command\n\n{command.get('type')} from {command.get('source')}\n\n"
             f"## Matched Keywords\n\n{', '.join(matched)}\n\n"
-            f"## Payload Path\n\n{command.get('payload_path')}\n\n",
+            f"## Prompt Source\n\n{prompt_source_label(command)}: {command_prompt_path(command)}\n\n",
             encoding="utf-8",
         )
         (outbox / "owner_decision_email.md").write_text(
             "Subject: [Agent Bridge Decision Required] Portable Automation Paused\n\n"
             "## Summary\n\nAgent Bridge portable dispatch paused because a safety gate was triggered.\n\n"
             f"## Matched Keywords\n\n{', '.join(matched)}\n\n"
-            f"## Payload Path\n\n{command.get('payload_path')}\n",
+            f"## Prompt Source\n\n{prompt_source_label(command)}: {command_prompt_path(command)}\n",
             encoding="utf-8",
         )
         (state_dir / "state.json").write_text(
@@ -128,10 +143,13 @@ for command in commands:
 
 commands.sort(key=lambda c: (-(c.get("priority") or 0), c.get("created_at") or ""))
 command = commands[0]
-payload_path = resolve_payload(command)
-if not payload_path.exists():
-    raise SystemExit(f"Payload file not found: {command.get('payload_path')}")
-payload = payload_path.read_text(encoding="utf-8")
+if command.get("prompt_text") is not None:
+    payload = str(command.get("prompt_text"))
+else:
+    payload_path = resolve_payload(command)
+    if not payload_path.exists():
+        raise SystemExit(f"Payload file not found: {command_prompt_path(command)}")
+    payload = payload_path.read_text(encoding="utf-8")
 
 template = (
     template_path.read_text(encoding="utf-8")
@@ -148,4 +166,3 @@ prompt_path.write_text(prompt, encoding="utf-8")
 print(prompt)
 log("portable_dispatch_dry_run_prompt_built", command_id=command.get("id"), command_type=command.get("type"))
 PY
-

@@ -1,0 +1,150 @@
+## placeholder_center
+marker_found=False
+confidence=0.0
++ Oma Y O ssnieeey oO
+
+OSM A YP main v
+
+
+## placeholder_center_left
+marker_found=False
+confidence=0.0
++ Oma Y O ssnieeey oO
+
+OSM A YP main v
+
+
+## placeholder_center_right
+marker_found=False
+confidence=0.0
++ Oma Y O ssnieeey oO
+
+OSM A YP main v
+
+
+## plus_anchor_y_offset_50
+marker_found=False
+confidence=0.0
++ OBB Y ® werRES 4 (
+OB Bw ae v
+
+® main v
+
+
+## plus_anchor_y_offset_70
+marker_found=False
+confidence=0.0
++ Oma Y O ssnieeey oO
+
+OSM A YP main v
+
+
+## plus_anchor_y_offset_90
+marker_found=False
+confidence=0.0
++ Oma Y O ssnieeey oO
+
+OSM A YP main v
+
+
+## plus_anchor_y_offset_110
+marker_found=False
+confidence=0.0
++ Oma Y O ssnieeey oO
+
+Qe YP main v
+
+
+## composer_band_center_left
+marker_found=False
+confidence=0.0
++ Oma Y O ssnieeey oO
+
+Qe YP main v
+
+
+## composer_band_placeholder_area
+marker_found=False
+confidence=0.0
++ Oma Y O ssnieeey oO
+
+Qe YP main v
+
+
+## composer_band_above_plus
+marker_found=False
+confidence=0.0
++ OBB Y ® werRES 4 (
+O BwoIM aet v
+
+® main v
+
+
+## owner_reviewed:composer_placeholder_center
+marker_found=False
+confidence=0.0
++ Oma Y O ssnieeey oO
+
+Qe YP main v
+
+
+## owner_reviewed:composer_text_left
+marker_found=False
+confidence=0.0
++ Oma Y O ssnieeey oO
+
+Qe YP main v
+
+
+## owner_reviewed:composer_text_mid
+marker_found=False
+confidence=0.0
++ Oma Y O ssnieeey oO
+
+Qe YP main v
+
+
+## owner_reviewed:composer_text_left_low
+marker_found=False
+confidence=0.0
++ OBB Y ® werRES 4 (
+O BwoIM aet v
+
+® main v
+
+
+## owner_reviewed:composer_text_left_mid_low
+marker_found=False
+confidence=0.0
++ OBB Y ® werRES 4 (
+O BwoIM aet v
+
+® main v
+
+
+## owner_reviewed:composer_text_quarter_low
+marker_found=False
+confidence=0.0
++ OBB Y ® werRES 4 (
+O BwoIM aet v
+
+® main v
+
+
+## owner_reviewed:plus_anchor_text_left
+marker_found=False
+confidence=0.0
++ OBB Y ® werRES 4 (
+O BwoIM aet v
+
+® main v
+
+
+## owner_reviewed:plus_anchor_text_mid
+marker_found=False
+confidence=0.0
++ OBB Y ® werRES 4 (
+O BwoIM aet v
+
+® main v
+

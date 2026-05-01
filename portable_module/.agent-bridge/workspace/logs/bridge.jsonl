@@ -84,3 +84,359 @@
 {"timestamp": "2026-04-27T17:02:15.911359+00:00", "event_type": "portable_review_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/github_review_digest.md\"}}"}}
 {"timestamp": "2026-04-27T17:02:15.960311+00:00", "event_type": "portable_ci_failure_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/ci_failure_digest.md\"}}"}}
 {"timestamp": "2026-04-27T17:02:16.039987+00:00", "event_type": "portable_dispatch_dry_run_prompt_built", "metadata": {"command_id": "cmd_ae1b4b623132", "command_type": "CI_FAILURE_FIX"}}
+{"timestamp": "2026-04-27T17:09:31.927660+00:00", "event_type": "portable_report_written", "metadata": {"raw": "{\"report_path\":\".agent-bridge/workspace/reports/latest_agent_report.md\"}}"}}
+{"timestamp": "2026-04-27T17:09:31.981574+00:00", "event_type": "portable_review_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/github_review_digest.md\"}}"}}
+{"timestamp": "2026-04-27T17:09:32.046808+00:00", "event_type": "portable_ci_failure_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/ci_failure_digest.md\"}}"}}
+{"timestamp": "2026-04-27T17:09:32.133093+00:00", "event_type": "portable_dispatch_dry_run_prompt_built", "metadata": {"command_id": "cmd_3d0efe2d4f34", "command_type": "CI_FAILURE_FIX"}}
+{"timestamp": "2026-04-27T17:42:26.719613+00:00", "event_type": "portable_report_written", "metadata": {"raw": "{\"report_path\":\".agent-bridge/workspace/reports/latest_agent_report.md\"}}"}}
+{"timestamp": "2026-04-27T17:42:26.767282+00:00", "event_type": "portable_review_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/github_review_digest.md\"}}"}}
+{"timestamp": "2026-04-27T17:42:26.814050+00:00", "event_type": "portable_ci_failure_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/ci_failure_digest.md\"}}"}}
+{"timestamp": "2026-04-27T17:42:26.893748+00:00", "event_type": "portable_dispatch_dry_run_prompt_built", "metadata": {"command_id": "cmd_ce510fcf3089", "command_type": "CI_FAILURE_FIX"}}
+{"timestamp": "2026-04-27T17:45:34.956950+00:00", "event_type": "portable_report_written", "metadata": {"raw": "{\"report_path\":\".agent-bridge/workspace/reports/latest_agent_report.md\"}}"}}
+{"timestamp": "2026-04-27T17:45:35.001153+00:00", "event_type": "portable_review_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/github_review_digest.md\"}}"}}
+{"timestamp": "2026-04-27T17:45:35.045874+00:00", "event_type": "portable_ci_failure_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/ci_failure_digest.md\"}}"}}
+{"timestamp": "2026-04-27T17:45:35.102727+00:00", "event_type": "portable_dispatch_dry_run_prompt_built", "metadata": {"command_id": "cmd_1dbb90386e2d", "command_type": "CI_FAILURE_FIX"}}
+{"timestamp": "2026-04-27T18:02:10.239986+00:00", "event_type": "portable_report_written", "metadata": {"raw": "{\"report_path\":\".agent-bridge/workspace/reports/latest_agent_report.md\"}}"}}
+{"timestamp": "2026-04-27T18:02:10.282913+00:00", "event_type": "portable_review_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/github_review_digest.md\"}}"}}
+{"timestamp": "2026-04-27T18:02:10.330268+00:00", "event_type": "portable_ci_failure_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/ci_failure_digest.md\"}}"}}
+{"timestamp": "2026-04-27T18:02:10.389686+00:00", "event_type": "portable_dispatch_dry_run_prompt_built", "metadata": {"command_id": "cmd_e5dac54c42c5", "command_type": "CI_FAILURE_FIX"}}
+{"timestamp": "2026-04-27T18:15:09.753127+00:00", "event_type": "portable_report_written", "metadata": {"raw": "{\"report_path\":\".agent-bridge/workspace/reports/latest_agent_report.md\"}}"}}
+{"timestamp": "2026-04-27T18:15:09.798033+00:00", "event_type": "portable_review_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/github_review_digest.md\"}}"}}
+{"timestamp": "2026-04-27T18:15:09.842525+00:00", "event_type": "portable_ci_failure_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/ci_failure_digest.md\"}}"}}
+{"timestamp": "2026-04-27T18:15:09.903827+00:00", "event_type": "portable_dispatch_dry_run_prompt_built", "metadata": {"command_id": "cmd_2ff0c240cebe", "command_type": "CI_FAILURE_FIX"}}
+{"timestamp": "2026-04-27T18:16:05.736967+00:00", "event_type": "portable_report_written", "metadata": {"raw": "{\"report_path\":\".agent-bridge/workspace/reports/latest_agent_report.md\"}}"}}
+{"timestamp": "2026-04-27T18:16:05.779396+00:00", "event_type": "portable_review_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/github_review_digest.md\"}}"}}
+{"timestamp": "2026-04-27T18:16:05.825001+00:00", "event_type": "portable_ci_failure_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/ci_failure_digest.md\"}}"}}
+{"timestamp": "2026-04-27T18:16:05.876857+00:00", "event_type": "portable_dispatch_dry_run_prompt_built", "metadata": {"command_id": "cmd_20ce74847dff", "command_type": "CI_FAILURE_FIX"}}
+{"timestamp": "2026-04-27T18:27:51.338216+00:00", "event_type": "portable_report_written", "metadata": {"raw": "{\"report_path\":\".agent-bridge/workspace/reports/latest_agent_report.md\"}}"}}
+{"timestamp": "2026-04-27T18:27:51.416140+00:00", "event_type": "portable_review_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/github_review_digest.md\"}}"}}
+{"timestamp": "2026-04-27T18:27:51.470036+00:00", "event_type": "portable_ci_failure_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/ci_failure_digest.md\"}}"}}
+{"timestamp": "2026-04-27T18:27:51.526586+00:00", "event_type": "portable_dispatch_dry_run_prompt_built", "metadata": {"command_id": "cmd_c17317c82187", "command_type": "CI_FAILURE_FIX"}}
+{"timestamp": "2026-04-27T18:59:09.365240+00:00", "event_type": "portable_report_written", "metadata": {"raw": "{\"report_path\":\".agent-bridge/workspace/reports/latest_agent_report.md\"}}"}}
+{"timestamp": "2026-04-27T18:59:09.431099+00:00", "event_type": "portable_review_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/github_review_digest.md\"}}"}}
+{"timestamp": "2026-04-27T18:59:09.483058+00:00", "event_type": "portable_ci_failure_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/ci_failure_digest.md\"}}"}}
+{"timestamp": "2026-04-27T18:59:09.541911+00:00", "event_type": "portable_dispatch_dry_run_prompt_built", "metadata": {"command_id": "cmd_5eff216f5355", "command_type": "CI_FAILURE_FIX"}}
+{"timestamp": "2026-04-27T19:06:42.395388+00:00", "event_type": "portable_report_written", "metadata": {"raw": "{\"report_path\":\".agent-bridge/workspace/reports/latest_agent_report.md\"}}"}}
+{"timestamp": "2026-04-27T19:06:42.454091+00:00", "event_type": "portable_review_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/github_review_digest.md\"}}"}}
+{"timestamp": "2026-04-27T19:06:42.538340+00:00", "event_type": "portable_ci_failure_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/ci_failure_digest.md\"}}"}}
+{"timestamp": "2026-04-27T19:06:42.676414+00:00", "event_type": "portable_dispatch_dry_run_prompt_built", "metadata": {"command_id": "cmd_6a1d0180a8bf", "command_type": "CI_FAILURE_FIX"}}
+{"timestamp": "2026-04-27T19:22:13.362673+00:00", "event_type": "portable_report_written", "metadata": {"raw": "{\"report_path\":\".agent-bridge/workspace/reports/latest_agent_report.md\"}}"}}
+{"timestamp": "2026-04-27T19:22:13.408857+00:00", "event_type": "portable_review_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/github_review_digest.md\"}}"}}
+{"timestamp": "2026-04-27T19:22:13.454622+00:00", "event_type": "portable_ci_failure_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/ci_failure_digest.md\"}}"}}
+{"timestamp": "2026-04-27T19:22:13.532985+00:00", "event_type": "portable_dispatch_dry_run_prompt_built", "metadata": {"command_id": "cmd_c91ac39e8fba", "command_type": "CI_FAILURE_FIX"}}
+{"timestamp": "2026-04-27T19:25:16.392476+00:00", "event_type": "portable_report_written", "metadata": {"raw": "{\"report_path\":\".agent-bridge/workspace/reports/latest_agent_report.md\"}}"}}
+{"timestamp": "2026-04-27T19:25:16.437927+00:00", "event_type": "portable_review_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/github_review_digest.md\"}}"}}
+{"timestamp": "2026-04-27T19:25:16.483080+00:00", "event_type": "portable_ci_failure_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/ci_failure_digest.md\"}}"}}
+{"timestamp": "2026-04-27T19:25:16.562851+00:00", "event_type": "portable_dispatch_dry_run_prompt_built", "metadata": {"command_id": "cmd_b5fb3bf20199", "command_type": "CI_FAILURE_FIX"}}
+{"timestamp": "2026-04-28T01:30:35.746211+00:00", "event_type": "portable_report_written", "metadata": {"raw": "{\"report_path\":\".agent-bridge/workspace/reports/latest_agent_report.md\"}}"}}
+{"timestamp": "2026-04-28T01:30:35.793069+00:00", "event_type": "portable_review_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/github_review_digest.md\"}}"}}
+{"timestamp": "2026-04-28T01:30:35.839015+00:00", "event_type": "portable_ci_failure_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/ci_failure_digest.md\"}}"}}
+{"timestamp": "2026-04-28T01:30:35.922903+00:00", "event_type": "portable_dispatch_dry_run_prompt_built", "metadata": {"command_id": "cmd_4153b0dad5f8", "command_type": "CI_FAILURE_FIX"}}
+{"timestamp": "2026-04-28T01:44:45.078685+00:00", "event_type": "portable_report_written", "metadata": {"raw": "{\"report_path\":\".agent-bridge/workspace/reports/latest_agent_report.md\"}}"}}
+{"timestamp": "2026-04-28T01:44:45.122566+00:00", "event_type": "portable_review_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/github_review_digest.md\"}}"}}
+{"timestamp": "2026-04-28T01:44:45.167169+00:00", "event_type": "portable_ci_failure_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/ci_failure_digest.md\"}}"}}
+{"timestamp": "2026-04-28T01:44:45.223865+00:00", "event_type": "portable_dispatch_dry_run_prompt_built", "metadata": {"command_id": "cmd_20e131b2dfbf", "command_type": "CI_FAILURE_FIX"}}
+{"timestamp": "2026-04-28T01:55:34.015806+00:00", "event_type": "portable_report_written", "metadata": {"raw": "{\"report_path\":\".agent-bridge/workspace/reports/latest_agent_report.md\"}}"}}
+{"timestamp": "2026-04-28T01:55:34.059389+00:00", "event_type": "portable_review_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/github_review_digest.md\"}}"}}
+{"timestamp": "2026-04-28T01:55:34.104976+00:00", "event_type": "portable_ci_failure_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/ci_failure_digest.md\"}}"}}
+{"timestamp": "2026-04-28T01:55:34.164788+00:00", "event_type": "portable_dispatch_dry_run_prompt_built", "metadata": {"command_id": "cmd_7d3bd7612975", "command_type": "CI_FAILURE_FIX"}}
+{"timestamp": "2026-04-28T03:10:29.331225+00:00", "event_type": "portable_report_written", "metadata": {"raw": "{\"report_path\":\".agent-bridge/workspace/reports/latest_agent_report.md\"}}"}}
+{"timestamp": "2026-04-28T03:10:29.400713+00:00", "event_type": "portable_review_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/github_review_digest.md\"}}"}}
+{"timestamp": "2026-04-28T03:10:29.505131+00:00", "event_type": "portable_ci_failure_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/ci_failure_digest.md\"}}"}}
+{"timestamp": "2026-04-28T03:10:29.582287+00:00", "event_type": "portable_dispatch_dry_run_prompt_built", "metadata": {"command_id": "cmd_e39df2c6a01c", "command_type": "CI_FAILURE_FIX"}}
+{"timestamp": "2026-04-28T03:25:29.243385+00:00", "event_type": "portable_report_written", "metadata": {"raw": "{\"report_path\":\".agent-bridge/workspace/reports/latest_agent_report.md\"}}"}}
+{"timestamp": "2026-04-28T03:25:29.300134+00:00", "event_type": "portable_review_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/github_review_digest.md\"}}"}}
+{"timestamp": "2026-04-28T03:25:29.352106+00:00", "event_type": "portable_ci_failure_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/ci_failure_digest.md\"}}"}}
+{"timestamp": "2026-04-28T03:25:29.418383+00:00", "event_type": "portable_dispatch_dry_run_prompt_built", "metadata": {"command_id": "cmd_353958cfedae", "command_type": "CI_FAILURE_FIX"}}
+{"timestamp": "2026-04-28T04:15:17.707975+00:00", "event_type": "portable_report_written", "metadata": {"raw": "{\"report_path\":\".agent-bridge/workspace/reports/latest_agent_report.md\"}}"}}
+{"timestamp": "2026-04-28T04:15:17.763183+00:00", "event_type": "portable_review_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/github_review_digest.md\"}}"}}
+{"timestamp": "2026-04-28T04:15:17.814737+00:00", "event_type": "portable_ci_failure_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/ci_failure_digest.md\"}}"}}
+{"timestamp": "2026-04-28T04:15:17.883123+00:00", "event_type": "portable_dispatch_dry_run_prompt_built", "metadata": {"command_id": "cmd_821b44d6343d", "command_type": "CI_FAILURE_FIX"}}
+{"timestamp": "2026-04-28T04:16:19.887471+00:00", "event_type": "portable_report_written", "metadata": {"raw": "{\"report_path\":\".agent-bridge/workspace/reports/latest_agent_report.md\"}}"}}
+{"timestamp": "2026-04-28T04:16:19.943158+00:00", "event_type": "portable_review_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/github_review_digest.md\"}}"}}
+{"timestamp": "2026-04-28T04:16:19.995665+00:00", "event_type": "portable_ci_failure_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/ci_failure_digest.md\"}}"}}
+{"timestamp": "2026-04-28T04:16:20.061412+00:00", "event_type": "portable_dispatch_dry_run_prompt_built", "metadata": {"command_id": "cmd_ce7e18980151", "command_type": "CI_FAILURE_FIX"}}
+{"timestamp": "2026-04-28T04:34:19.788610+00:00", "event_type": "portable_report_written", "metadata": {"raw": "{\"report_path\":\".agent-bridge/workspace/reports/latest_agent_report.md\"}}"}}
+{"timestamp": "2026-04-28T04:34:19.845634+00:00", "event_type": "portable_review_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/github_review_digest.md\"}}"}}
+{"timestamp": "2026-04-28T04:34:19.899893+00:00", "event_type": "portable_ci_failure_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/ci_failure_digest.md\"}}"}}
+{"timestamp": "2026-04-28T04:34:19.967155+00:00", "event_type": "portable_dispatch_dry_run_prompt_built", "metadata": {"command_id": "cmd_a31bfd657e30", "command_type": "CI_FAILURE_FIX"}}
+{"timestamp": "2026-04-28T04:47:34.863908+00:00", "event_type": "portable_report_written", "metadata": {"raw": "{\"report_path\":\".agent-bridge/workspace/reports/latest_agent_report.md\"}}"}}
+{"timestamp": "2026-04-28T04:47:34.920193+00:00", "event_type": "portable_review_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/github_review_digest.md\"}}"}}
+{"timestamp": "2026-04-28T04:47:34.975140+00:00", "event_type": "portable_ci_failure_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/ci_failure_digest.md\"}}"}}
+{"timestamp": "2026-04-28T04:47:35.044651+00:00", "event_type": "portable_dispatch_dry_run_prompt_built", "metadata": {"command_id": "cmd_dda757541f8a", "command_type": "CI_FAILURE_FIX"}}
+{"timestamp": "2026-04-28T04:58:05.164993+00:00", "event_type": "portable_report_written", "metadata": {"raw": "{\"report_path\":\".agent-bridge/workspace/reports/latest_agent_report.md\"}}"}}
+{"timestamp": "2026-04-28T04:58:05.216322+00:00", "event_type": "portable_review_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/github_review_digest.md\"}}"}}
+{"timestamp": "2026-04-28T04:58:05.270864+00:00", "event_type": "portable_ci_failure_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/ci_failure_digest.md\"}}"}}
+{"timestamp": "2026-04-28T04:58:05.332130+00:00", "event_type": "portable_dispatch_dry_run_prompt_built", "metadata": {"command_id": "cmd_615fd782a22c", "command_type": "CI_FAILURE_FIX"}}
+{"timestamp": "2026-04-28T05:10:10.775820+00:00", "event_type": "portable_report_written", "metadata": {"raw": "{\"report_path\":\".agent-bridge/workspace/reports/latest_agent_report.md\"}}"}}
+{"timestamp": "2026-04-28T05:10:10.827879+00:00", "event_type": "portable_review_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/github_review_digest.md\"}}"}}
+{"timestamp": "2026-04-28T05:10:10.896613+00:00", "event_type": "portable_ci_failure_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/ci_failure_digest.md\"}}"}}
+{"timestamp": "2026-04-28T05:10:10.976429+00:00", "event_type": "portable_dispatch_dry_run_prompt_built", "metadata": {"command_id": "cmd_09b9e423ebe7", "command_type": "CI_FAILURE_FIX"}}
+{"timestamp": "2026-04-28T05:29:38.328942+00:00", "event_type": "portable_report_written", "metadata": {"raw": "{\"report_path\":\".agent-bridge/workspace/reports/latest_agent_report.md\"}}"}}
+{"timestamp": "2026-04-28T05:29:38.380145+00:00", "event_type": "portable_review_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/github_review_digest.md\"}}"}}
+{"timestamp": "2026-04-28T05:29:38.430269+00:00", "event_type": "portable_ci_failure_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/ci_failure_digest.md\"}}"}}
+{"timestamp": "2026-04-28T05:29:38.518221+00:00", "event_type": "portable_dispatch_dry_run_prompt_built", "metadata": {"command_id": "cmd_2f83c58310d3", "command_type": "CI_FAILURE_FIX"}}
+{"timestamp": "2026-04-28T05:42:25.803763+00:00", "event_type": "portable_report_written", "metadata": {"raw": "{\"report_path\":\".agent-bridge/workspace/reports/latest_agent_report.md\"}}"}}
+{"timestamp": "2026-04-28T05:42:25.856931+00:00", "event_type": "portable_review_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/github_review_digest.md\"}}"}}
+{"timestamp": "2026-04-28T05:42:25.911256+00:00", "event_type": "portable_ci_failure_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/ci_failure_digest.md\"}}"}}
+{"timestamp": "2026-04-28T05:42:25.972072+00:00", "event_type": "portable_dispatch_dry_run_prompt_built", "metadata": {"command_id": "cmd_e4873a513935", "command_type": "CI_FAILURE_FIX"}}
+{"timestamp": "2026-04-28T07:43:44.080944+00:00", "event_type": "portable_report_written", "metadata": {"raw": "{\"report_path\":\".agent-bridge/workspace/reports/latest_agent_report.md\"}}"}}
+{"timestamp": "2026-04-28T07:43:44.124070+00:00", "event_type": "portable_review_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/github_review_digest.md\"}}"}}
+{"timestamp": "2026-04-28T07:43:44.167731+00:00", "event_type": "portable_ci_failure_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/ci_failure_digest.md\"}}"}}
+{"timestamp": "2026-04-28T07:43:44.223096+00:00", "event_type": "portable_dispatch_dry_run_prompt_built", "metadata": {"command_id": "cmd_6b01da9e8539", "command_type": "CI_FAILURE_FIX"}}
+{"timestamp": "2026-04-28T07:57:02.575391+00:00", "event_type": "portable_report_written", "metadata": {"raw": "{\"report_path\":\".agent-bridge/workspace/reports/latest_agent_report.md\"}}"}}
+{"timestamp": "2026-04-28T07:57:02.619624+00:00", "event_type": "portable_review_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/github_review_digest.md\"}}"}}
+{"timestamp": "2026-04-28T07:57:02.662311+00:00", "event_type": "portable_ci_failure_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/ci_failure_digest.md\"}}"}}
+{"timestamp": "2026-04-28T07:57:02.739089+00:00", "event_type": "portable_dispatch_dry_run_prompt_built", "metadata": {"command_id": "cmd_d38bd9fcf944", "command_type": "CI_FAILURE_FIX"}}
+{"timestamp": "2026-04-28T08:14:37.656292+00:00", "event_type": "portable_report_written", "metadata": {"raw": "{\"report_path\":\".agent-bridge/workspace/reports/latest_agent_report.md\"}}"}}
+{"timestamp": "2026-04-28T08:14:37.700525+00:00", "event_type": "portable_review_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/github_review_digest.md\"}}"}}
+{"timestamp": "2026-04-28T08:14:37.743721+00:00", "event_type": "portable_ci_failure_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/ci_failure_digest.md\"}}"}}
+{"timestamp": "2026-04-28T08:14:37.802570+00:00", "event_type": "portable_dispatch_dry_run_prompt_built", "metadata": {"command_id": "cmd_a9c0c6049e51", "command_type": "CI_FAILURE_FIX"}}
+{"timestamp": "2026-04-28T08:27:58.744578+00:00", "event_type": "portable_report_written", "metadata": {"raw": "{\"report_path\":\".agent-bridge/workspace/reports/latest_agent_report.md\"}}"}}
+{"timestamp": "2026-04-28T08:27:58.797530+00:00", "event_type": "portable_review_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/github_review_digest.md\"}}"}}
+{"timestamp": "2026-04-28T08:27:58.862650+00:00", "event_type": "portable_ci_failure_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/ci_failure_digest.md\"}}"}}
+{"timestamp": "2026-04-28T08:27:58.972645+00:00", "event_type": "portable_dispatch_dry_run_prompt_built", "metadata": {"command_id": "cmd_9d5a72c769ad", "command_type": "CI_FAILURE_FIX"}}
+{"timestamp": "2026-04-28T12:08:40.890501+00:00", "event_type": "portable_report_written", "metadata": {"raw": "{\"report_path\":\".agent-bridge/workspace/reports/latest_agent_report.md\"}}"}}
+{"timestamp": "2026-04-28T12:08:40.949802+00:00", "event_type": "portable_review_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/github_review_digest.md\"}}"}}
+{"timestamp": "2026-04-28T12:08:41.006320+00:00", "event_type": "portable_ci_failure_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/ci_failure_digest.md\"}}"}}
+{"timestamp": "2026-04-28T12:08:41.066293+00:00", "event_type": "portable_dispatch_dry_run_prompt_built", "metadata": {"command_id": "cmd_575ecf2b957b", "command_type": "CI_FAILURE_FIX"}}
+{"timestamp": "2026-04-28T12:31:17.987219+00:00", "event_type": "portable_report_written", "metadata": {"raw": "{\"report_path\":\".agent-bridge/workspace/reports/latest_agent_report.md\"}}"}}
+{"timestamp": "2026-04-28T12:31:18.042163+00:00", "event_type": "portable_review_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/github_review_digest.md\"}}"}}
+{"timestamp": "2026-04-28T12:31:18.094954+00:00", "event_type": "portable_ci_failure_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/ci_failure_digest.md\"}}"}}
+{"timestamp": "2026-04-28T12:31:18.159808+00:00", "event_type": "portable_dispatch_dry_run_prompt_built", "metadata": {"command_id": "cmd_df88ba18d3ac", "command_type": "CI_FAILURE_FIX"}}
+{"timestamp": "2026-04-28T12:43:29.297945+00:00", "event_type": "portable_report_written", "metadata": {"raw": "{\"report_path\":\".agent-bridge/workspace/reports/latest_agent_report.md\"}}"}}
+{"timestamp": "2026-04-28T12:43:29.355499+00:00", "event_type": "portable_review_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/github_review_digest.md\"}}"}}
+{"timestamp": "2026-04-28T12:43:29.408367+00:00", "event_type": "portable_ci_failure_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/ci_failure_digest.md\"}}"}}
+{"timestamp": "2026-04-28T12:43:29.474845+00:00", "event_type": "portable_dispatch_dry_run_prompt_built", "metadata": {"command_id": "cmd_e93816fc26b3", "command_type": "CI_FAILURE_FIX"}}
+{"timestamp": "2026-04-28T12:57:44.815743+00:00", "event_type": "portable_report_written", "metadata": {"raw": "{\"report_path\":\".agent-bridge/workspace/reports/latest_agent_report.md\"}}"}}
+{"timestamp": "2026-04-28T12:57:44.868456+00:00", "event_type": "portable_review_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/github_review_digest.md\"}}"}}
+{"timestamp": "2026-04-28T12:57:44.931525+00:00", "event_type": "portable_ci_failure_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/ci_failure_digest.md\"}}"}}
+{"timestamp": "2026-04-28T12:57:44.996125+00:00", "event_type": "portable_dispatch_dry_run_prompt_built", "metadata": {"command_id": "cmd_1fd19a2732cb", "command_type": "CI_FAILURE_FIX"}}
+{"timestamp": "2026-04-28T14:16:00.395431+00:00", "event_type": "portable_report_written", "metadata": {"raw": "{\"report_path\":\".agent-bridge/workspace/reports/latest_agent_report.md\"}}"}}
+{"timestamp": "2026-04-28T14:16:00.455705+00:00", "event_type": "portable_review_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/github_review_digest.md\"}}"}}
+{"timestamp": "2026-04-28T14:16:00.517439+00:00", "event_type": "portable_ci_failure_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/ci_failure_digest.md\"}}"}}
+{"timestamp": "2026-04-28T14:16:00.587369+00:00", "event_type": "portable_dispatch_dry_run_prompt_built", "metadata": {"command_id": "cmd_c5ef6f011782", "command_type": "CI_FAILURE_FIX"}}
+{"timestamp": "2026-04-28T14:35:11.564746+00:00", "event_type": "portable_report_written", "metadata": {"raw": "{\"report_path\":\".agent-bridge/workspace/reports/latest_agent_report.md\"}}"}}
+{"timestamp": "2026-04-28T14:35:11.646856+00:00", "event_type": "portable_review_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/github_review_digest.md\"}}"}}
+{"timestamp": "2026-04-28T14:35:11.706385+00:00", "event_type": "portable_ci_failure_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/ci_failure_digest.md\"}}"}}
+{"timestamp": "2026-04-28T14:35:11.789718+00:00", "event_type": "portable_dispatch_dry_run_prompt_built", "metadata": {"command_id": "cmd_4036724e3407", "command_type": "CI_FAILURE_FIX"}}
+{"timestamp": "2026-04-28T14:52:03.740216+00:00", "event_type": "portable_report_written", "metadata": {"raw": "{\"report_path\":\".agent-bridge/workspace/reports/latest_agent_report.md\"}}"}}
+{"timestamp": "2026-04-28T14:52:03.798010+00:00", "event_type": "portable_review_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/github_review_digest.md\"}}"}}
+{"timestamp": "2026-04-28T14:52:03.854578+00:00", "event_type": "portable_ci_failure_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/ci_failure_digest.md\"}}"}}
+{"timestamp": "2026-04-28T14:52:03.913100+00:00", "event_type": "portable_dispatch_dry_run_prompt_built", "metadata": {"command_id": "cmd_b2d3be57d141", "command_type": "CI_FAILURE_FIX"}}
+{"timestamp": "2026-04-28T15:06:01.494206+00:00", "event_type": "portable_report_written", "metadata": {"raw": "{\"report_path\":\".agent-bridge/workspace/reports/latest_agent_report.md\"}}"}}
+{"timestamp": "2026-04-28T15:06:01.540450+00:00", "event_type": "portable_review_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/github_review_digest.md\"}}"}}
+{"timestamp": "2026-04-28T15:06:01.595438+00:00", "event_type": "portable_ci_failure_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/ci_failure_digest.md\"}}"}}
+{"timestamp": "2026-04-28T15:06:01.681135+00:00", "event_type": "portable_dispatch_dry_run_prompt_built", "metadata": {"command_id": "cmd_aafa3b8cdfc1", "command_type": "CI_FAILURE_FIX"}}
+{"timestamp": "2026-04-28T15:07:20.221784+00:00", "event_type": "portable_report_written", "metadata": {"raw": "{\"report_path\":\".agent-bridge/workspace/reports/latest_agent_report.md\"}}"}}
+{"timestamp": "2026-04-28T15:07:20.266372+00:00", "event_type": "portable_review_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/github_review_digest.md\"}}"}}
+{"timestamp": "2026-04-28T15:07:20.315163+00:00", "event_type": "portable_ci_failure_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/ci_failure_digest.md\"}}"}}
+{"timestamp": "2026-04-28T15:07:20.371372+00:00", "event_type": "portable_dispatch_dry_run_prompt_built", "metadata": {"command_id": "cmd_216c04f73d12", "command_type": "CI_FAILURE_FIX"}}
+{"timestamp": "2026-04-28T15:24:33.619413+00:00", "event_type": "portable_report_written", "metadata": {"raw": "{\"report_path\":\".agent-bridge/workspace/reports/latest_agent_report.md\"}}"}}
+{"timestamp": "2026-04-28T15:24:33.668625+00:00", "event_type": "portable_review_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/github_review_digest.md\"}}"}}
+{"timestamp": "2026-04-28T15:24:33.719829+00:00", "event_type": "portable_ci_failure_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/ci_failure_digest.md\"}}"}}
+{"timestamp": "2026-04-28T15:24:33.783830+00:00", "event_type": "portable_dispatch_dry_run_prompt_built", "metadata": {"command_id": "cmd_622b6e696a6a", "command_type": "CI_FAILURE_FIX"}}
+{"timestamp": "2026-04-28T15:43:56.241616+00:00", "event_type": "portable_report_written", "metadata": {"raw": "{\"report_path\":\".agent-bridge/workspace/reports/latest_agent_report.md\"}}"}}
+{"timestamp": "2026-04-28T15:43:56.291274+00:00", "event_type": "portable_review_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/github_review_digest.md\"}}"}}
+{"timestamp": "2026-04-28T15:43:56.372791+00:00", "event_type": "portable_ci_failure_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/ci_failure_digest.md\"}}"}}
+{"timestamp": "2026-04-28T15:43:56.434154+00:00", "event_type": "portable_dispatch_dry_run_prompt_built", "metadata": {"command_id": "cmd_0d0b1902c5e0", "command_type": "CI_FAILURE_FIX"}}
+{"timestamp": "2026-04-28T15:45:47.927280+00:00", "event_type": "portable_report_written", "metadata": {"raw": "{\"report_path\":\".agent-bridge/workspace/reports/latest_agent_report.md\"}}"}}
+{"timestamp": "2026-04-28T15:45:47.983849+00:00", "event_type": "portable_review_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/github_review_digest.md\"}}"}}
+{"timestamp": "2026-04-28T15:45:48.061043+00:00", "event_type": "portable_ci_failure_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/ci_failure_digest.md\"}}"}}
+{"timestamp": "2026-04-28T15:45:48.131665+00:00", "event_type": "portable_dispatch_dry_run_prompt_built", "metadata": {"command_id": "cmd_5537a33387b4", "command_type": "CI_FAILURE_FIX"}}
+{"timestamp": "2026-04-28T16:18:41.516998+00:00", "event_type": "portable_report_written", "metadata": {"raw": "{\"report_path\":\".agent-bridge/workspace/reports/latest_agent_report.md\"}}"}}
+{"timestamp": "2026-04-28T16:18:41.574681+00:00", "event_type": "portable_review_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/github_review_digest.md\"}}"}}
+{"timestamp": "2026-04-28T16:18:41.631877+00:00", "event_type": "portable_ci_failure_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/ci_failure_digest.md\"}}"}}
+{"timestamp": "2026-04-28T16:18:41.697385+00:00", "event_type": "portable_dispatch_dry_run_prompt_built", "metadata": {"command_id": "cmd_fec7ab7faf4a", "command_type": "CI_FAILURE_FIX"}}
+{"timestamp": "2026-04-28T16:24:06.416657+00:00", "event_type": "portable_report_written", "metadata": {"raw": "{\"report_path\":\".agent-bridge/workspace/reports/latest_agent_report.md\"}}"}}
+{"timestamp": "2026-04-28T16:24:06.491336+00:00", "event_type": "portable_review_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/github_review_digest.md\"}}"}}
+{"timestamp": "2026-04-28T16:24:06.556410+00:00", "event_type": "portable_ci_failure_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/ci_failure_digest.md\"}}"}}
+{"timestamp": "2026-04-28T16:24:06.628295+00:00", "event_type": "portable_dispatch_dry_run_prompt_built", "metadata": {"command_id": "cmd_14801d1d24b9", "command_type": "CI_FAILURE_FIX"}}
+{"timestamp": "2026-04-28T17:02:00.181353+00:00", "event_type": "portable_report_written", "metadata": {"raw": "{\"report_path\":\".agent-bridge/workspace/reports/latest_agent_report.md\"}}"}}
+{"timestamp": "2026-04-28T17:02:00.232386+00:00", "event_type": "portable_review_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/github_review_digest.md\"}}"}}
+{"timestamp": "2026-04-28T17:02:00.284814+00:00", "event_type": "portable_ci_failure_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/ci_failure_digest.md\"}}"}}
+{"timestamp": "2026-04-28T17:02:00.348293+00:00", "event_type": "portable_dispatch_dry_run_prompt_built", "metadata": {"command_id": "cmd_cb44314385b1", "command_type": "CI_FAILURE_FIX"}}
+{"timestamp": "2026-04-28T17:04:15.083803+00:00", "event_type": "portable_report_written", "metadata": {"raw": "{\"report_path\":\".agent-bridge/workspace/reports/latest_agent_report.md\"}}"}}
+{"timestamp": "2026-04-28T17:04:15.139541+00:00", "event_type": "portable_review_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/github_review_digest.md\"}}"}}
+{"timestamp": "2026-04-28T17:04:15.202246+00:00", "event_type": "portable_ci_failure_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/ci_failure_digest.md\"}}"}}
+{"timestamp": "2026-04-28T17:04:15.280055+00:00", "event_type": "portable_dispatch_dry_run_prompt_built", "metadata": {"command_id": "cmd_1a275fcfca6a", "command_type": "CI_FAILURE_FIX"}}
+{"timestamp": "2026-04-28T17:17:24.089428+00:00", "event_type": "portable_report_written", "metadata": {"raw": "{\"report_path\":\".agent-bridge/workspace/reports/latest_agent_report.md\"}}"}}
+{"timestamp": "2026-04-28T17:17:24.144225+00:00", "event_type": "portable_review_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/github_review_digest.md\"}}"}}
+{"timestamp": "2026-04-28T17:17:24.216885+00:00", "event_type": "portable_ci_failure_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/ci_failure_digest.md\"}}"}}
+{"timestamp": "2026-04-28T17:17:24.286052+00:00", "event_type": "portable_dispatch_dry_run_prompt_built", "metadata": {"command_id": "cmd_e1c98486cc73", "command_type": "CI_FAILURE_FIX"}}
+{"timestamp": "2026-04-28T17:49:36.953916+00:00", "event_type": "portable_report_written", "metadata": {"raw": "{\"report_path\":\".agent-bridge/workspace/reports/latest_agent_report.md\"}}"}}
+{"timestamp": "2026-04-28T17:49:37.000350+00:00", "event_type": "portable_review_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/github_review_digest.md\"}}"}}
+{"timestamp": "2026-04-28T17:49:37.047775+00:00", "event_type": "portable_ci_failure_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/ci_failure_digest.md\"}}"}}
+{"timestamp": "2026-04-28T17:49:37.107498+00:00", "event_type": "portable_dispatch_dry_run_prompt_built", "metadata": {"command_id": "cmd_f8cc84dd0721", "command_type": "CI_FAILURE_FIX"}}
+{"timestamp": "2026-04-28T17:50:48.560330+00:00", "event_type": "portable_report_written", "metadata": {"raw": "{\"report_path\":\".agent-bridge/workspace/reports/latest_agent_report.md\"}}"}}
+{"timestamp": "2026-04-28T17:50:48.609408+00:00", "event_type": "portable_review_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/github_review_digest.md\"}}"}}
+{"timestamp": "2026-04-28T17:50:48.658633+00:00", "event_type": "portable_ci_failure_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/ci_failure_digest.md\"}}"}}
+{"timestamp": "2026-04-28T17:50:48.720257+00:00", "event_type": "portable_dispatch_dry_run_prompt_built", "metadata": {"command_id": "cmd_f5ce76d425c2", "command_type": "CI_FAILURE_FIX"}}
+{"timestamp": "2026-04-28T17:59:31.298585+00:00", "event_type": "portable_report_written", "metadata": {"raw": "{\"report_path\":\".agent-bridge/workspace/reports/latest_agent_report.md\"}}"}}
+{"timestamp": "2026-04-28T17:59:31.346863+00:00", "event_type": "portable_review_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/github_review_digest.md\"}}"}}
+{"timestamp": "2026-04-28T17:59:31.394711+00:00", "event_type": "portable_ci_failure_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/ci_failure_digest.md\"}}"}}
+{"timestamp": "2026-04-28T17:59:31.459202+00:00", "event_type": "portable_dispatch_dry_run_prompt_built", "metadata": {"command_id": "cmd_6e4a138ac5f3", "command_type": "CI_FAILURE_FIX"}}
+{"timestamp": "2026-04-28T18:19:20.169004+00:00", "event_type": "portable_report_written", "metadata": {"raw": "{\"report_path\":\".agent-bridge/workspace/reports/latest_agent_report.md\"}}"}}
+{"timestamp": "2026-04-28T18:19:20.218552+00:00", "event_type": "portable_review_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/github_review_digest.md\"}}"}}
+{"timestamp": "2026-04-28T18:19:20.269374+00:00", "event_type": "portable_ci_failure_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/ci_failure_digest.md\"}}"}}
+{"timestamp": "2026-04-28T18:19:20.332894+00:00", "event_type": "portable_dispatch_dry_run_prompt_built", "metadata": {"command_id": "cmd_8aa3bf4706d0", "command_type": "CI_FAILURE_FIX"}}
+{"timestamp": "2026-04-28T18:20:03.597722+00:00", "event_type": "portable_report_written", "metadata": {"raw": "{\"report_path\":\".agent-bridge/workspace/reports/latest_agent_report.md\"}}"}}
+{"timestamp": "2026-04-28T18:20:03.647515+00:00", "event_type": "portable_review_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/github_review_digest.md\"}}"}}
+{"timestamp": "2026-04-28T18:20:03.723383+00:00", "event_type": "portable_ci_failure_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/ci_failure_digest.md\"}}"}}
+{"timestamp": "2026-04-28T18:20:03.801766+00:00", "event_type": "portable_dispatch_dry_run_prompt_built", "metadata": {"command_id": "cmd_562f944348c5", "command_type": "CI_FAILURE_FIX"}}
+{"timestamp": "2026-04-28T18:35:54.073332+00:00", "event_type": "portable_report_written", "metadata": {"raw": "{\"report_path\":\".agent-bridge/workspace/reports/latest_agent_report.md\"}}"}}
+{"timestamp": "2026-04-28T18:35:54.126891+00:00", "event_type": "portable_review_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/github_review_digest.md\"}}"}}
+{"timestamp": "2026-04-28T18:35:54.188915+00:00", "event_type": "portable_ci_failure_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/ci_failure_digest.md\"}}"}}
+{"timestamp": "2026-04-28T18:35:54.254587+00:00", "event_type": "portable_dispatch_dry_run_prompt_built", "metadata": {"command_id": "cmd_a5c0a95f5b08", "command_type": "CI_FAILURE_FIX"}}
+{"timestamp": "2026-04-28T18:49:39.299061+00:00", "event_type": "portable_report_written", "metadata": {"raw": "{\"report_path\":\".agent-bridge/workspace/reports/latest_agent_report.md\"}}"}}
+{"timestamp": "2026-04-28T18:49:39.345263+00:00", "event_type": "portable_review_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/github_review_digest.md\"}}"}}
+{"timestamp": "2026-04-28T18:49:39.391241+00:00", "event_type": "portable_ci_failure_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/ci_failure_digest.md\"}}"}}
+{"timestamp": "2026-04-28T18:49:39.451677+00:00", "event_type": "portable_dispatch_dry_run_prompt_built", "metadata": {"command_id": "cmd_c3f5de38e021", "command_type": "CI_FAILURE_FIX"}}
+{"timestamp": "2026-04-28T19:08:51.759442+00:00", "event_type": "portable_report_written", "metadata": {"raw": "{\"report_path\":\".agent-bridge/workspace/reports/latest_agent_report.md\"}}"}}
+{"timestamp": "2026-04-28T19:08:51.804098+00:00", "event_type": "portable_review_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/github_review_digest.md\"}}"}}
+{"timestamp": "2026-04-28T19:08:51.849908+00:00", "event_type": "portable_ci_failure_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/ci_failure_digest.md\"}}"}}
+{"timestamp": "2026-04-28T19:08:51.938772+00:00", "event_type": "portable_dispatch_dry_run_prompt_built", "metadata": {"command_id": "cmd_b97de3e22822", "command_type": "CI_FAILURE_FIX"}}
+{"timestamp": "2026-04-28T19:22:21.426346+00:00", "event_type": "portable_report_written", "metadata": {"raw": "{\"report_path\":\".agent-bridge/workspace/reports/latest_agent_report.md\"}}"}}
+{"timestamp": "2026-04-28T19:22:21.491776+00:00", "event_type": "portable_review_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/github_review_digest.md\"}}"}}
+{"timestamp": "2026-04-28T19:22:21.546937+00:00", "event_type": "portable_ci_failure_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/ci_failure_digest.md\"}}"}}
+{"timestamp": "2026-04-28T19:22:21.634857+00:00", "event_type": "portable_dispatch_dry_run_prompt_built", "metadata": {"command_id": "cmd_a9b4ce2d3219", "command_type": "CI_FAILURE_FIX"}}
+{"timestamp": "2026-04-29T00:42:36.705229+00:00", "event_type": "portable_report_written", "metadata": {"raw": "{\"report_path\":\".agent-bridge/workspace/reports/latest_agent_report.md\"}}"}}
+{"timestamp": "2026-04-29T00:42:36.750533+00:00", "event_type": "portable_review_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/github_review_digest.md\"}}"}}
+{"timestamp": "2026-04-29T00:42:36.798055+00:00", "event_type": "portable_ci_failure_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/ci_failure_digest.md\"}}"}}
+{"timestamp": "2026-04-29T00:42:36.864125+00:00", "event_type": "portable_dispatch_dry_run_prompt_built", "metadata": {"command_id": "cmd_1a27e9674f78", "command_type": "CI_FAILURE_FIX"}}
+{"timestamp": "2026-04-29T01:11:51.733275+00:00", "event_type": "portable_report_written", "metadata": {"raw": "{\"report_path\":\".agent-bridge/workspace/reports/latest_agent_report.md\"}}"}}
+{"timestamp": "2026-04-29T01:11:51.788262+00:00", "event_type": "portable_review_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/github_review_digest.md\"}}"}}
+{"timestamp": "2026-04-29T01:11:51.840973+00:00", "event_type": "portable_ci_failure_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/ci_failure_digest.md\"}}"}}
+{"timestamp": "2026-04-29T01:11:51.899292+00:00", "event_type": "portable_dispatch_dry_run_prompt_built", "metadata": {"command_id": "cmd_6b8425284418", "command_type": "CI_FAILURE_FIX"}}
+{"timestamp": "2026-04-29T01:46:39.741862+00:00", "event_type": "portable_report_written", "metadata": {"raw": "{\"report_path\":\".agent-bridge/workspace/reports/latest_agent_report.md\"}}"}}
+{"timestamp": "2026-04-29T01:46:39.791875+00:00", "event_type": "portable_review_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/github_review_digest.md\"}}"}}
+{"timestamp": "2026-04-29T01:46:39.847735+00:00", "event_type": "portable_ci_failure_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/ci_failure_digest.md\"}}"}}
+{"timestamp": "2026-04-29T01:46:39.910177+00:00", "event_type": "portable_dispatch_dry_run_prompt_built", "metadata": {"command_id": "cmd_787ef031497a", "command_type": "CI_FAILURE_FIX"}}
+{"timestamp": "2026-04-29T01:56:20.054640+00:00", "event_type": "portable_report_written", "metadata": {"raw": "{\"report_path\":\".agent-bridge/workspace/reports/latest_agent_report.md\"}}"}}
+{"timestamp": "2026-04-29T01:56:20.100842+00:00", "event_type": "portable_review_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/github_review_digest.md\"}}"}}
+{"timestamp": "2026-04-29T01:56:20.147135+00:00", "event_type": "portable_ci_failure_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/ci_failure_digest.md\"}}"}}
+{"timestamp": "2026-04-29T01:56:20.213501+00:00", "event_type": "portable_dispatch_dry_run_prompt_built", "metadata": {"command_id": "cmd_99978e634e90", "command_type": "CI_FAILURE_FIX"}}
+{"timestamp": "2026-04-29T02:15:49.536460+00:00", "event_type": "portable_report_written", "metadata": {"raw": "{\"report_path\":\".agent-bridge/workspace/reports/latest_agent_report.md\"}}"}}
+{"timestamp": "2026-04-29T02:15:49.584441+00:00", "event_type": "portable_review_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/github_review_digest.md\"}}"}}
+{"timestamp": "2026-04-29T02:15:49.633313+00:00", "event_type": "portable_ci_failure_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/ci_failure_digest.md\"}}"}}
+{"timestamp": "2026-04-29T02:15:49.692171+00:00", "event_type": "portable_dispatch_dry_run_prompt_built", "metadata": {"command_id": "cmd_5035faa330c4", "command_type": "CI_FAILURE_FIX"}}
+{"timestamp": "2026-04-29T05:33:15.071128+00:00", "event_type": "portable_report_written", "metadata": {"raw": "{\"report_path\":\".agent-bridge/workspace/reports/latest_agent_report.md\"}}"}}
+{"timestamp": "2026-04-29T05:33:15.117815+00:00", "event_type": "portable_review_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/github_review_digest.md\"}}"}}
+{"timestamp": "2026-04-29T05:33:15.167303+00:00", "event_type": "portable_ci_failure_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/ci_failure_digest.md\"}}"}}
+{"timestamp": "2026-04-29T05:33:15.226365+00:00", "event_type": "portable_dispatch_dry_run_prompt_built", "metadata": {"command_id": "cmd_2c8bc576e64b", "command_type": "CI_FAILURE_FIX"}}
+{"timestamp": "2026-04-29T07:16:28.486286+00:00", "event_type": "portable_report_written", "metadata": {"raw": "{\"report_path\":\".agent-bridge/workspace/reports/latest_agent_report.md\"}}"}}
+{"timestamp": "2026-04-29T07:16:28.546716+00:00", "event_type": "portable_review_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/github_review_digest.md\"}}"}}
+{"timestamp": "2026-04-29T07:16:28.602001+00:00", "event_type": "portable_ci_failure_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/ci_failure_digest.md\"}}"}}
+{"timestamp": "2026-04-29T07:16:28.674620+00:00", "event_type": "portable_dispatch_dry_run_prompt_built", "metadata": {"command_id": "cmd_d65ca9ddb5ed", "command_type": "CI_FAILURE_FIX"}}
+{"timestamp": "2026-04-29T07:29:07.664617+00:00", "event_type": "portable_report_written", "metadata": {"raw": "{\"report_path\":\".agent-bridge/workspace/reports/latest_agent_report.md\"}}"}}
+{"timestamp": "2026-04-29T07:29:07.721552+00:00", "event_type": "portable_review_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/github_review_digest.md\"}}"}}
+{"timestamp": "2026-04-29T07:29:07.777309+00:00", "event_type": "portable_ci_failure_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/ci_failure_digest.md\"}}"}}
+{"timestamp": "2026-04-29T07:29:07.867574+00:00", "event_type": "portable_dispatch_dry_run_prompt_built", "metadata": {"command_id": "cmd_096607a6728b", "command_type": "CI_FAILURE_FIX"}}
+{"timestamp": "2026-04-29T07:44:29.911175+00:00", "event_type": "portable_report_written", "metadata": {"raw": "{\"report_path\":\".agent-bridge/workspace/reports/latest_agent_report.md\"}}"}}
+{"timestamp": "2026-04-29T07:44:29.994016+00:00", "event_type": "portable_review_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/github_review_digest.md\"}}"}}
+{"timestamp": "2026-04-29T07:44:30.047868+00:00", "event_type": "portable_ci_failure_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/ci_failure_digest.md\"}}"}}
+{"timestamp": "2026-04-29T07:44:30.111784+00:00", "event_type": "portable_dispatch_dry_run_prompt_built", "metadata": {"command_id": "cmd_d59527094dfc", "command_type": "CI_FAILURE_FIX"}}
+{"timestamp": "2026-04-29T08:21:01.022117+00:00", "event_type": "portable_report_written", "metadata": {"raw": "{\"report_path\":\".agent-bridge/workspace/reports/latest_agent_report.md\"}}"}}
+{"timestamp": "2026-04-29T08:21:01.074730+00:00", "event_type": "portable_review_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/github_review_digest.md\"}}"}}
+{"timestamp": "2026-04-29T08:21:01.128815+00:00", "event_type": "portable_ci_failure_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/ci_failure_digest.md\"}}"}}
+{"timestamp": "2026-04-29T08:21:01.190452+00:00", "event_type": "portable_dispatch_dry_run_prompt_built", "metadata": {"command_id": "cmd_adb2e80c8441", "command_type": "CI_FAILURE_FIX"}}
+{"timestamp": "2026-04-29T08:36:21.104574+00:00", "event_type": "portable_report_written", "metadata": {"raw": "{\"report_path\":\".agent-bridge/workspace/reports/latest_agent_report.md\"}}"}}
+{"timestamp": "2026-04-29T08:36:21.155078+00:00", "event_type": "portable_review_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/github_review_digest.md\"}}"}}
+{"timestamp": "2026-04-29T08:36:21.207211+00:00", "event_type": "portable_ci_failure_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/ci_failure_digest.md\"}}"}}
+{"timestamp": "2026-04-29T08:36:21.265461+00:00", "event_type": "portable_dispatch_dry_run_prompt_built", "metadata": {"command_id": "cmd_781db073304c", "command_type": "CI_FAILURE_FIX"}}
+{"timestamp": "2026-04-29T09:29:38.235264+00:00", "event_type": "portable_report_written", "metadata": {"raw": "{\"report_path\":\".agent-bridge/workspace/reports/latest_agent_report.md\"}}"}}
+{"timestamp": "2026-04-29T09:29:38.298861+00:00", "event_type": "portable_review_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/github_review_digest.md\"}}"}}
+{"timestamp": "2026-04-29T09:29:38.358984+00:00", "event_type": "portable_ci_failure_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/ci_failure_digest.md\"}}"}}
+{"timestamp": "2026-04-29T09:29:38.428130+00:00", "event_type": "portable_dispatch_dry_run_prompt_built", "metadata": {"command_id": "cmd_59b6e848b1a3", "command_type": "CI_FAILURE_FIX"}}
+{"timestamp": "2026-04-29T09:45:28.059067+00:00", "event_type": "portable_report_written", "metadata": {"raw": "{\"report_path\":\".agent-bridge/workspace/reports/latest_agent_report.md\"}}"}}
+{"timestamp": "2026-04-29T09:45:28.115575+00:00", "event_type": "portable_review_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/github_review_digest.md\"}}"}}
+{"timestamp": "2026-04-29T09:45:28.170732+00:00", "event_type": "portable_ci_failure_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/ci_failure_digest.md\"}}"}}
+{"timestamp": "2026-04-29T09:45:28.236581+00:00", "event_type": "portable_dispatch_dry_run_prompt_built", "metadata": {"command_id": "cmd_3cdb3c6b50aa", "command_type": "CI_FAILURE_FIX"}}
+{"timestamp": "2026-04-29T10:12:00.006540+00:00", "event_type": "portable_report_written", "metadata": {"raw": "{\"report_path\":\".agent-bridge/workspace/reports/latest_agent_report.md\"}}"}}
+{"timestamp": "2026-04-29T10:12:00.064522+00:00", "event_type": "portable_review_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/github_review_digest.md\"}}"}}
+{"timestamp": "2026-04-29T10:12:00.118290+00:00", "event_type": "portable_ci_failure_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/ci_failure_digest.md\"}}"}}
+{"timestamp": "2026-04-29T10:12:00.183512+00:00", "event_type": "portable_dispatch_dry_run_prompt_built", "metadata": {"command_id": "cmd_a8b18273661a", "command_type": "CI_FAILURE_FIX"}}
+{"timestamp": "2026-04-30T01:56:36.454803+00:00", "event_type": "portable_report_written", "metadata": {"raw": "{\"report_path\":\".agent-bridge/workspace/reports/latest_agent_report.md\"}}"}}
+{"timestamp": "2026-04-30T01:56:36.506703+00:00", "event_type": "portable_review_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/github_review_digest.md\"}}"}}
+{"timestamp": "2026-04-30T01:56:36.565305+00:00", "event_type": "portable_ci_failure_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/ci_failure_digest.md\"}}"}}
+{"timestamp": "2026-04-30T01:56:36.640109+00:00", "event_type": "portable_dispatch_dry_run_prompt_built", "metadata": {"command_id": "cmd_746178df22d1", "command_type": "CI_FAILURE_FIX"}}
+{"timestamp": "2026-04-30T03:35:20.858523+00:00", "event_type": "portable_report_written", "metadata": {"raw": "{\"report_path\":\".agent-bridge/workspace/reports/latest_agent_report.md\"}}"}}
+{"timestamp": "2026-04-30T03:35:20.919696+00:00", "event_type": "portable_review_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/github_review_digest.md\"}}"}}
+{"timestamp": "2026-04-30T03:35:20.977866+00:00", "event_type": "portable_ci_failure_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/ci_failure_digest.md\"}}"}}
+{"timestamp": "2026-04-30T03:35:21.054258+00:00", "event_type": "portable_dispatch_dry_run_prompt_built", "metadata": {"command_id": "cmd_e1eb2bc14ec8", "command_type": "CI_FAILURE_FIX"}}
+{"timestamp": "2026-04-30T03:57:44.501551+00:00", "event_type": "portable_report_written", "metadata": {"raw": "{\"report_path\":\".agent-bridge/workspace/reports/latest_agent_report.md\"}}"}}
+{"timestamp": "2026-04-30T03:57:44.547579+00:00", "event_type": "portable_review_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/github_review_digest.md\"}}"}}
+{"timestamp": "2026-04-30T03:57:44.592131+00:00", "event_type": "portable_ci_failure_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/ci_failure_digest.md\"}}"}}
+{"timestamp": "2026-04-30T03:57:44.651456+00:00", "event_type": "portable_dispatch_dry_run_prompt_built", "metadata": {"command_id": "cmd_e1774cb4df80", "command_type": "CI_FAILURE_FIX"}}
+{"timestamp": "2026-04-30T04:36:45.459167+00:00", "event_type": "portable_report_written", "metadata": {"raw": "{\"report_path\":\".agent-bridge/workspace/reports/latest_agent_report.md\"}}"}}
+{"timestamp": "2026-04-30T04:36:45.530174+00:00", "event_type": "portable_review_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/github_review_digest.md\"}}"}}
+{"timestamp": "2026-04-30T04:36:45.609087+00:00", "event_type": "portable_ci_failure_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/ci_failure_digest.md\"}}"}}
+{"timestamp": "2026-04-30T04:36:45.707588+00:00", "event_type": "portable_dispatch_dry_run_prompt_built", "metadata": {"command_id": "cmd_18bc92d30121", "command_type": "CI_FAILURE_FIX"}}
+{"timestamp": "2026-04-30T04:41:38.327061+00:00", "event_type": "portable_report_written", "metadata": {"raw": "{\"report_path\":\".agent-bridge/workspace/reports/latest_agent_report.md\"}}"}}
+{"timestamp": "2026-04-30T04:41:38.380317+00:00", "event_type": "portable_review_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/github_review_digest.md\"}}"}}
+{"timestamp": "2026-04-30T04:41:38.435733+00:00", "event_type": "portable_ci_failure_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/ci_failure_digest.md\"}}"}}
+{"timestamp": "2026-04-30T04:41:38.514981+00:00", "event_type": "portable_dispatch_dry_run_prompt_built", "metadata": {"command_id": "cmd_694e1aa21daf", "command_type": "CI_FAILURE_FIX"}}
+{"timestamp": "2026-04-30T04:54:24.749243+00:00", "event_type": "portable_report_written", "metadata": {"raw": "{\"report_path\":\".agent-bridge/workspace/reports/latest_agent_report.md\"}}"}}
+{"timestamp": "2026-04-30T04:54:24.810030+00:00", "event_type": "portable_review_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/github_review_digest.md\"}}"}}
+{"timestamp": "2026-04-30T04:54:24.868055+00:00", "event_type": "portable_ci_failure_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/ci_failure_digest.md\"}}"}}
+{"timestamp": "2026-04-30T04:54:24.938691+00:00", "event_type": "portable_dispatch_dry_run_prompt_built", "metadata": {"command_id": "cmd_b9996939e7fb", "command_type": "CI_FAILURE_FIX"}}
+{"timestamp": "2026-04-30T05:04:30.108205+00:00", "event_type": "portable_report_written", "metadata": {"raw": "{\"report_path\":\".agent-bridge/workspace/reports/latest_agent_report.md\"}}"}}
+{"timestamp": "2026-04-30T05:04:30.158075+00:00", "event_type": "portable_review_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/github_review_digest.md\"}}"}}
+{"timestamp": "2026-04-30T05:04:30.207616+00:00", "event_type": "portable_ci_failure_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/ci_failure_digest.md\"}}"}}
+{"timestamp": "2026-04-30T05:04:30.273347+00:00", "event_type": "portable_dispatch_dry_run_prompt_built", "metadata": {"command_id": "cmd_344b7e49c6de", "command_type": "CI_FAILURE_FIX"}}
+{"timestamp": "2026-04-30T06:07:15.107936+00:00", "event_type": "portable_report_written", "metadata": {"raw": "{\"report_path\":\".agent-bridge/workspace/reports/latest_agent_report.md\"}}"}}
+{"timestamp": "2026-04-30T06:07:15.156959+00:00", "event_type": "portable_review_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/github_review_digest.md\"}}"}}
+{"timestamp": "2026-04-30T06:07:15.208056+00:00", "event_type": "portable_ci_failure_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/ci_failure_digest.md\"}}"}}
+{"timestamp": "2026-04-30T06:07:15.277109+00:00", "event_type": "portable_dispatch_dry_run_prompt_built", "metadata": {"command_id": "cmd_adf2f47ff854", "command_type": "CI_FAILURE_FIX"}}
+{"timestamp": "2026-04-30T06:23:06.810885+00:00", "event_type": "portable_report_written", "metadata": {"raw": "{\"report_path\":\".agent-bridge/workspace/reports/latest_agent_report.md\"}}"}}
+{"timestamp": "2026-04-30T06:23:06.855011+00:00", "event_type": "portable_review_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/github_review_digest.md\"}}"}}
+{"timestamp": "2026-04-30T06:23:06.903064+00:00", "event_type": "portable_ci_failure_digest_ingested", "metadata": {"raw": "{\"payload_path\":\".agent-bridge/workspace/inbox/ci_failure_digest.md\"}}"}}
+{"timestamp": "2026-04-30T06:23:06.963590+00:00", "event_type": "portable_dispatch_dry_run_prompt_built", "metadata": {"command_id": "cmd_b01ba560b09a", "command_type": "CI_FAILURE_FIX"}}
+{"timestamp": "2026-04-30T06:34:51.705618+00:00", "event_type": "portable_report_written", "metadata": {"raw": "{\"report_path\":\".agent-bridge/workspace/reports/latest_agent_report.md\"}}"}}
+{"timestamp": "2026-04-30T06:34:51.762569+00:00", "event_type": "portable_review_digest_ingested", "metadata": {"raw": "{\"prompt_path\":\".agent-bridge/workspace/inbox/github_review_digest.md\"}}"}}
+{"timestamp": "2026-04-30T06:34:51.821456+00:00", "event_type": "portable_ci_failure_digest_ingested", "metadata": {"raw": "{\"prompt_path\":\".agent-bridge/workspace/inbox/ci_failure_digest.md\"}}"}}
+{"timestamp": "2026-04-30T06:34:51.919648+00:00", "event_type": "portable_dispatch_dry_run_prompt_built", "metadata": {"command_id": "cmd_4b617f1b859e", "command_type": "CI_FAILURE_FIX"}}
+{"timestamp": "2026-04-30T07:01:13.275414+00:00", "event_type": "portable_report_written", "metadata": {"raw": "{\"report_path\":\".agent-bridge/workspace/reports/latest_agent_report.md\"}}"}}
+{"timestamp": "2026-04-30T07:01:13.341852+00:00", "event_type": "portable_review_digest_ingested", "metadata": {"raw": "{\"prompt_path\":\".agent-bridge/workspace/inbox/github_review_digest.md\"}}"}}
+{"timestamp": "2026-04-30T07:01:13.403978+00:00", "event_type": "portable_ci_failure_digest_ingested", "metadata": {"raw": "{\"prompt_path\":\".agent-bridge/workspace/inbox/ci_failure_digest.md\"}}"}}
+{"timestamp": "2026-04-30T07:01:13.487912+00:00", "event_type": "portable_dispatch_dry_run_prompt_built", "metadata": {"command_id": "cmd_d36ede7da76d", "command_type": "CI_FAILURE_FIX"}}
+{"timestamp": "2026-04-30T07:36:41.119616+00:00", "event_type": "portable_report_written", "metadata": {"raw": "{\"report_path\":\".agent-bridge/workspace/reports/latest_agent_report.md\"}}"}}
+{"timestamp": "2026-04-30T07:36:41.174092+00:00", "event_type": "portable_review_digest_ingested", "metadata": {"raw": "{\"prompt_path\":\".agent-bridge/workspace/inbox/github_review_digest.md\"}}"}}
+{"timestamp": "2026-04-30T07:36:41.228317+00:00", "event_type": "portable_ci_failure_digest_ingested", "metadata": {"raw": "{\"prompt_path\":\".agent-bridge/workspace/inbox/ci_failure_digest.md\"}}"}}
+{"timestamp": "2026-04-30T07:36:41.292413+00:00", "event_type": "portable_dispatch_dry_run_prompt_built", "metadata": {"command_id": "cmd_a7d8caa90d77", "command_type": "CI_FAILURE_FIX"}}
+{"timestamp": "2026-04-30T07:50:47.199585+00:00", "event_type": "portable_report_written", "metadata": {"raw": "{\"report_path\":\".agent-bridge/workspace/reports/latest_agent_report.md\"}}"}}
+{"timestamp": "2026-04-30T07:50:47.254043+00:00", "event_type": "portable_review_digest_ingested", "metadata": {"raw": "{\"prompt_path\":\".agent-bridge/workspace/inbox/github_review_digest.md\"}}"}}
+{"timestamp": "2026-04-30T07:50:47.347199+00:00", "event_type": "portable_ci_failure_digest_ingested", "metadata": {"raw": "{\"prompt_path\":\".agent-bridge/workspace/inbox/ci_failure_digest.md\"}}"}}
+{"timestamp": "2026-04-30T07:50:47.409109+00:00", "event_type": "portable_dispatch_dry_run_prompt_built", "metadata": {"command_id": "cmd_55e2c7d7203a", "command_type": "CI_FAILURE_FIX"}}
+{"timestamp": "2026-04-30T08:15:29.908728+00:00", "event_type": "portable_report_written", "metadata": {"raw": "{\"report_path\":\".agent-bridge/workspace/reports/latest_agent_report.md\"}}"}}
+{"timestamp": "2026-04-30T08:15:29.956295+00:00", "event_type": "portable_review_digest_ingested", "metadata": {"raw": "{\"prompt_path\":\".agent-bridge/workspace/inbox/github_review_digest.md\"}}"}}
+{"timestamp": "2026-04-30T08:15:30.009598+00:00", "event_type": "portable_ci_failure_digest_ingested", "metadata": {"raw": "{\"prompt_path\":\".agent-bridge/workspace/inbox/ci_failure_digest.md\"}}"}}
+{"timestamp": "2026-04-30T08:15:30.069054+00:00", "event_type": "portable_dispatch_dry_run_prompt_built", "metadata": {"command_id": "cmd_2098556eb656", "command_type": "CI_FAILURE_FIX"}}
+{"timestamp": "2026-04-30T08:43:09.240226+00:00", "event_type": "portable_report_written", "metadata": {"raw": "{\"report_path\":\".agent-bridge/workspace/reports/latest_agent_report.md\"}}"}}
+{"timestamp": "2026-04-30T08:43:09.313517+00:00", "event_type": "portable_review_digest_ingested", "metadata": {"raw": "{\"prompt_path\":\".agent-bridge/workspace/inbox/github_review_digest.md\"}}"}}
+{"timestamp": "2026-04-30T08:43:09.369654+00:00", "event_type": "portable_ci_failure_digest_ingested", "metadata": {"raw": "{\"prompt_path\":\".agent-bridge/workspace/inbox/ci_failure_digest.md\"}}"}}
+{"timestamp": "2026-04-30T08:43:09.430399+00:00", "event_type": "portable_dispatch_dry_run_prompt_built", "metadata": {"command_id": "cmd_56bc83d56a5d", "command_type": "CI_FAILURE_FIX"}}
+{"timestamp": "2026-04-30T10:18:35.733574+00:00", "event_type": "portable_report_written", "metadata": {"raw": "{\"report_path\":\".agent-bridge/workspace/reports/latest_agent_report.md\"}}"}}
+{"timestamp": "2026-04-30T10:18:35.792704+00:00", "event_type": "portable_review_digest_ingested", "metadata": {"raw": "{\"prompt_path\":\".agent-bridge/workspace/inbox/github_review_digest.md\"}}"}}
+{"timestamp": "2026-04-30T10:18:35.852979+00:00", "event_type": "portable_ci_failure_digest_ingested", "metadata": {"raw": "{\"prompt_path\":\".agent-bridge/workspace/inbox/ci_failure_digest.md\"}}"}}
+{"timestamp": "2026-04-30T10:18:35.922396+00:00", "event_type": "portable_dispatch_dry_run_prompt_built", "metadata": {"command_id": "cmd_e76a19b69b2e", "command_type": "CI_FAILURE_FIX"}}
+{"timestamp": "2026-04-30T10:46:17.662427+00:00", "event_type": "portable_report_written", "metadata": {"raw": "{\"report_path\":\".agent-bridge/workspace/reports/latest_agent_report.md\"}}"}}
+{"timestamp": "2026-04-30T10:46:17.745963+00:00", "event_type": "portable_review_digest_ingested", "metadata": {"raw": "{\"prompt_path\":\".agent-bridge/workspace/inbox/github_review_digest.md\"}}"}}
+{"timestamp": "2026-04-30T10:46:17.814811+00:00", "event_type": "portable_ci_failure_digest_ingested", "metadata": {"raw": "{\"prompt_path\":\".agent-bridge/workspace/inbox/ci_failure_digest.md\"}}"}}
+{"timestamp": "2026-04-30T10:46:17.903904+00:00", "event_type": "portable_dispatch_dry_run_prompt_built", "metadata": {"command_id": "cmd_fcb66e3fb66f", "command_type": "CI_FAILURE_FIX"}}
+{"timestamp": "2026-04-30T11:02:28.058552+00:00", "event_type": "portable_report_written", "metadata": {"raw": "{\"report_path\":\".agent-bridge/workspace/reports/latest_agent_report.md\"}}"}}
+{"timestamp": "2026-04-30T11:02:28.108867+00:00", "event_type": "portable_review_digest_ingested", "metadata": {"raw": "{\"prompt_path\":\".agent-bridge/workspace/inbox/github_review_digest.md\"}}"}}
+{"timestamp": "2026-04-30T11:02:28.164266+00:00", "event_type": "portable_ci_failure_digest_ingested", "metadata": {"raw": "{\"prompt_path\":\".agent-bridge/workspace/inbox/ci_failure_digest.md\"}}"}}
+{"timestamp": "2026-04-30T11:02:28.227401+00:00", "event_type": "portable_dispatch_dry_run_prompt_built", "metadata": {"command_id": "cmd_c05ec2213a39", "command_type": "CI_FAILURE_FIX"}}
+{"timestamp": "2026-04-30T11:04:10.509031+00:00", "event_type": "portable_report_written", "metadata": {"raw": "{\"report_path\":\".agent-bridge/workspace/reports/latest_agent_report.md\"}}"}}
+{"timestamp": "2026-04-30T11:04:10.559669+00:00", "event_type": "portable_review_digest_ingested", "metadata": {"raw": "{\"prompt_path\":\".agent-bridge/workspace/inbox/github_review_digest.md\"}}"}}
+{"timestamp": "2026-04-30T11:04:10.616745+00:00", "event_type": "portable_ci_failure_digest_ingested", "metadata": {"raw": "{\"prompt_path\":\".agent-bridge/workspace/inbox/ci_failure_digest.md\"}}"}}
+{"timestamp": "2026-04-30T11:04:10.674407+00:00", "event_type": "portable_dispatch_dry_run_prompt_built", "metadata": {"command_id": "cmd_4c32eeee7eb0", "command_type": "CI_FAILURE_FIX"}}
+{"timestamp": "2026-04-30T11:06:19.779934+00:00", "event_type": "portable_report_written", "metadata": {"raw": "{\"report_path\":\".agent-bridge/workspace/reports/latest_agent_report.md\"}}"}}
+{"timestamp": "2026-04-30T11:06:19.828146+00:00", "event_type": "portable_review_digest_ingested", "metadata": {"raw": "{\"prompt_path\":\".agent-bridge/workspace/inbox/github_review_digest.md\"}}"}}
+{"timestamp": "2026-04-30T11:06:19.883291+00:00", "event_type": "portable_ci_failure_digest_ingested", "metadata": {"raw": "{\"prompt_path\":\".agent-bridge/workspace/inbox/ci_failure_digest.md\"}}"}}
+{"timestamp": "2026-04-30T11:06:19.941757+00:00", "event_type": "portable_dispatch_dry_run_prompt_built", "metadata": {"command_id": "cmd_dc5d9e8b6ba3", "command_type": "CI_FAILURE_FIX"}}
+{"timestamp": "2026-04-30T23:51:10.938025+00:00", "event_type": "portable_report_written", "metadata": {"raw": "{\"report_path\":\".agent-bridge/workspace/reports/latest_agent_report.md\"}}"}}
+{"timestamp": "2026-04-30T23:51:10.986066+00:00", "event_type": "portable_review_digest_ingested", "metadata": {"raw": "{\"prompt_path\":\".agent-bridge/workspace/inbox/github_review_digest.md\"}}"}}
+{"timestamp": "2026-04-30T23:51:11.036673+00:00", "event_type": "portable_ci_failure_digest_ingested", "metadata": {"raw": "{\"prompt_path\":\".agent-bridge/workspace/inbox/ci_failure_digest.md\"}}"}}
+{"timestamp": "2026-04-30T23:51:11.097717+00:00", "event_type": "portable_dispatch_dry_run_prompt_built", "metadata": {"command_id": "cmd_47703b3a6cf6", "command_type": "CI_FAILURE_FIX"}}

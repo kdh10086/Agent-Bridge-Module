@@ -10,20 +10,127 @@ limits:
   max_runtime_seconds: 3600
   polling_interval_seconds: 15
 
+gui:
+  max_state_machine_attempts: 3
+  state_machine_retry_delay_seconds: 0.5
+  max_action_attempts: 3
+  action_retry_delay_seconds: 0.5
+  submit_after_paste_max_attempts: 100
+
 apps:
   pm_assistant:
-    app_name: "Google Chrome"
-    app_path: null
-    bundle_id: null
+    app_name: "ChatGPT"
+    app_path: "/Applications/ChatGPT.app"
+    bundle_id: "com.openai.chat"
+    backend: "chatgpt_mac_visual"
+    profile: "chatgpt_mac"
+    require_backend_preflight: false
+    idle_empty_timeout_seconds: 600
+    idle_empty_poll_interval_seconds: 10
     window_hint: "ChatGPT"
     paste_instruction: "Paste into the ChatGPT composer, then review manually. Do not submit automatically."
+    focus_strategy: "visual_plus_anchor"
+    visual_asset_profile: "chatgpt_mac"
+    click_backend: "pyautogui"
+    visual_anchor_click_backend: "pyautogui"
+    paste_backend: "menu_paste_accessibility"
+    paste_backends:
+      - menu_paste_accessibility
+      - system_events_key_code_v_command
+    plus_anchor_x_offset: 0
+    plus_anchor_y_offset: 40
+    response_copy_css_selector: null
+    response_copy_xpath: null
+    response_copy_full_xpath: null
+    response_copy_strategy: "latest_button_then_owner_selectors_then_fallback"
+    visual_plus_templates:
+      - assets/gui/chatgpt_mac/chatgpt_mac_plus_button_light.png
+      - assets/gui/chatgpt_mac/chatgpt_mac_plus_button_dark.png
+    visual_send_disabled_templates:
+      - assets/gui/chatgpt_mac/chatgpt_mac_send_disabled_button_light.png
+      - assets/gui/chatgpt_mac/chatgpt_mac_send_disabled_button_dark.png
+    visual_send_templates:
+      - assets/gui/chatgpt_mac/chatgpt_mac_send_button_light.png
+      - assets/gui/chatgpt_mac/chatgpt_mac_send_button_dark.png
+    visual_stop_templates:
+      - assets/gui/chatgpt_mac/chatgpt_mac_stop_button_light.png
+      - assets/gui/chatgpt_mac/chatgpt_mac_stop_button_dark.png
+    visual_plus_confidence_threshold: 0.58
+    visual_state_confidence_threshold: 0.85
+    visual_state_ambiguity_margin: 0.03
+    visual_state_search_region: "lower_control_band"
+    visual_plus_multiscale_enabled: true
+    visual_appearance_score_threshold: 70.0
 
   local_agent:
     app_name: "Codex"
     app_path: null
     bundle_id: null
+    backend: null
+    require_backend_preflight: false
     window_hint: "Agent Bridge"
     paste_instruction: "Paste into Codex input, then review manually. Do not submit automatically."
+    focus_strategy: "direct_plus_anchor"
+    visual_asset_profile: "codex"
+    input_focus_strategy: null
+    click_backend: "pyautogui"
+    visual_anchor_click_backend: "pyautogui"
+    paste_backend: "pyautogui"
+    input_click_x_ratio: null
+    input_click_y_ratio: null
+    require_prompt_presence_verification: true
+    allow_unverified_submit: false
+    allow_unverified_submit_for_noop_dogfood: true
+    composer_placeholder_text: "후속 변경 사항을 부탁하세요"
+    idle_empty_wait_timeout_seconds: 600
+    idle_empty_poll_interval_seconds: 10
+    dedicated_automation_session: true
+    allow_overwrite_after_idle_timeout: true
+    stop_on_idle_timeout: false
+    plus_anchor_enabled: true
+    plus_anchor_x_offset: 0
+    plus_anchor_y_offset: 50
+    direct_plus_anchor_enabled: true
+    direct_plus_anchor_x_offset: 0
+    direct_plus_anchor_y_offset: 50
+    direct_plus_anchor_y_offset_candidates: [50]
+    visual_plus_templates:
+      - assets/gui/codex/codex_plus_button_light.png
+      - assets/gui/codex/codex_plus_button_dark.png
+    visual_send_disabled_templates:
+      - assets/gui/codex/codex_send_disabled_button_light.png
+      - assets/gui/codex/codex_send_disabled_button_dark.png
+    visual_send_templates:
+      - assets/gui/codex/codex_send_button_light.png
+      - assets/gui/codex/codex_send_button_dark.png
+    visual_stop_templates:
+      - assets/gui/codex/codex_stop_button_light.png
+      - assets/gui/codex/codex_stop_button_dark.png
+    visual_plus_confidence_threshold: 0.80
+    visual_state_confidence_threshold: 0.95
+    visual_state_ambiguity_margin: 0.02
+    visual_state_search_region: "lower_control_band"
+    visual_plus_multiscale_enabled: true
+    min_main_window_width: 400
+    min_main_window_height: 300
+    min_main_window_area: 120000
+    window_selection_strategy: "largest_visible_normal"
+    owner_reviewed_focus_candidates: []
+    composer_policy:
+      mode: dedicated_automation_session
+      busy_placeholder_wait_timeout_seconds: 600
+      busy_placeholder_poll_interval_seconds: 10
+      on_busy_timeout: overwrite
+    visual_text_recognition:
+      enabled: true
+      ocr_backend: "pytesseract"
+      marker_text: "AGENT_BRIDGE_CODEX_PASTE_TEST_DO_NOT_SUBMIT"
+      placeholder_text: "후속 변경 사항을 부탁하세요"
+      search_region: "lower_composer_band"
+    response_copy_css_selector: null
+    response_copy_xpath: null
+    response_copy_full_xpath: null
+    response_copy_strategy: null
 
 github:
   owner: ""

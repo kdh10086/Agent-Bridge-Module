@@ -1,0 +1,699 @@
+{
+  "target_app": "Codex",
+  "marker_text": "x",
+  "click_backend": "pyautogui",
+  "codex_frontmost": true,
+  "window_bounds": [
+    1760,
+    687,
+    800,
+    600
+  ],
+  "placeholder_bbox": [
+    1792,
+    1143,
+    704,
+    144
+  ],
+  "plus_button_bbox": [
+    1796,
+    1204,
+    35,
+    35
+  ],
+  "safe_region_bounds": [
+    1792,
+    1143,
+    704,
+    144
+  ],
+  "selected_candidate_name": null,
+  "selected_click_point": null,
+  "manual_cleanup_required": false,
+  "stopped_reason": null,
+  "error": null,
+  "candidates": [
+    {
+      "name": "placeholder_center",
+      "family": "placeholder",
+      "click_point": [
+        2144,
+        1215
+      ],
+      "safe": true,
+      "source": "placeholder_bbox",
+      "rejection_reason": null
+    },
+    {
+      "name": "placeholder_center_left",
+      "family": "placeholder",
+      "click_point": [
+        2038,
+        1215
+      ],
+      "safe": true,
+      "source": "placeholder_bbox",
+      "rejection_reason": null
+    },
+    {
+      "name": "placeholder_center_right",
+      "family": "placeholder",
+      "click_point": [
+        2249,
+        1215
+      ],
+      "safe": true,
+      "source": "placeholder_bbox",
+      "rejection_reason": null
+    },
+    {
+      "name": "plus_anchor_y_offset_50",
+      "family": "plus_anchor",
+      "click_point": [
+        1813,
+        1171
+      ],
+      "safe": true,
+      "source": "plus_button_bbox",
+      "rejection_reason": null
+    },
+    {
+      "name": "plus_anchor_y_offset_70",
+      "family": "plus_anchor",
+      "click_point": [
+        1813,
+        1151
+      ],
+      "safe": true,
+      "source": "plus_button_bbox",
+      "rejection_reason": null
+    },
+    {
+      "name": "plus_anchor_y_offset_90",
+      "family": "plus_anchor",
+      "click_point": [
+        1813,
+        1131
+      ],
+      "safe": true,
+      "source": "plus_button_bbox",
+      "rejection_reason": null
+    },
+    {
+      "name": "plus_anchor_y_offset_110",
+      "family": "plus_anchor",
+      "click_point": [
+        1813,
+        1111
+      ],
+      "safe": true,
+      "source": "plus_button_bbox",
+      "rejection_reason": null
+    },
+    {
+      "name": "composer_band_center_left",
+      "family": "composer_band",
+      "click_point": [
+        2038,
+        1215
+      ],
+      "safe": true,
+      "source": "composer_text_search_region",
+      "rejection_reason": null
+    },
+    {
+      "name": "composer_band_placeholder_area",
+      "family": "composer_band",
+      "click_point": [
+        2144,
+        1215
+      ],
+      "safe": true,
+      "source": "composer_text_search_region",
+      "rejection_reason": null
+    },
+    {
+      "name": "composer_band_above_plus",
+      "family": "composer_band",
+      "click_point": [
+        1820,
+        1179
+      ],
+      "safe": true,
+      "source": "composer_text_search_region",
+      "rejection_reason": null
+    },
+    {
+      "name": "owner_reviewed:composer_placeholder_center",
+      "family": "owner_reviewed",
+      "click_point": [
+        2160,
+        1155
+      ],
+      "safe": true,
+      "source": "owner_reviewed_focus_candidates:main_window",
+      "rejection_reason": null
+    },
+    {
+      "name": "owner_reviewed:composer_text_left",
+      "family": "owner_reviewed",
+      "click_point": [
+        2112,
+        1155
+      ],
+      "safe": true,
+      "source": "owner_reviewed_focus_candidates:main_window",
+      "rejection_reason": null
+    },
+    {
+      "name": "owner_reviewed:composer_text_mid",
+      "family": "owner_reviewed",
+      "click_point": [
+        2200,
+        1155
+      ],
+      "safe": true,
+      "source": "owner_reviewed_focus_candidates:main_window",
+      "rejection_reason": null
+    },
+    {
+      "name": "owner_reviewed:composer_above_plus_high",
+      "family": "owner_reviewed",
+      "click_point": [
+        1813,
+        1091
+      ],
+      "safe": false,
+      "source": "owner_reviewed_focus_candidates:plus_anchor",
+      "rejection_reason": "outside safe composer band"
+    },
+    {
+      "name": "owner_reviewed:composer_above_plus_mid",
+      "family": "owner_reviewed",
+      "click_point": [
+        1893,
+        1121
+      ],
+      "safe": false,
+      "source": "owner_reviewed_focus_candidates:plus_anchor",
+      "rejection_reason": "outside safe composer band"
+    },
+    {
+      "name": "owner_reviewed:composer_text_left_low",
+      "family": "owner_reviewed",
+      "click_point": [
+        1856,
+        1176
+      ],
+      "safe": true,
+      "source": "owner_reviewed_focus_candidates:main_window",
+      "rejection_reason": null
+    },
+    {
+      "name": "owner_reviewed:composer_text_left_mid_low",
+      "family": "owner_reviewed",
+      "click_point": [
+        1904,
+        1176
+      ],
+      "safe": true,
+      "source": "owner_reviewed_focus_candidates:main_window",
+      "rejection_reason": null
+    },
+    {
+      "name": "owner_reviewed:composer_text_quarter_low",
+      "family": "owner_reviewed",
+      "click_point": [
+        1960,
+        1176
+      ],
+      "safe": true,
+      "source": "owner_reviewed_focus_candidates:main_window",
+      "rejection_reason": null
+    },
+    {
+      "name": "owner_reviewed:plus_anchor_text_left",
+      "family": "owner_reviewed",
+      "click_point": [
+        1858,
+        1173
+      ],
+      "safe": true,
+      "source": "owner_reviewed_focus_candidates:plus_anchor",
+      "rejection_reason": null
+    },
+    {
+      "name": "owner_reviewed:plus_anchor_text_mid",
+      "family": "owner_reviewed",
+      "click_point": [
+        1933,
+        1173
+      ],
+      "safe": true,
+      "source": "owner_reviewed_focus_candidates:plus_anchor",
+      "rejection_reason": null
+    }
+  ],
+  "attempts": [
+    {
+      "candidate_name": "placeholder_center",
+      "candidate_family": "placeholder",
+      "click_point": [
+        2144,
+        1215
+      ],
+      "click_point_safe": true,
+      "click_attempted": true,
+      "click_succeeded": true,
+      "typed_marker_attempted": true,
+      "typed_marker_succeeded": true,
+      "marker_found": false,
+      "marker_confidence": 0.0,
+      "marker_match_text": null,
+      "marker_ocr_text": "+ Oma Y O ssnieeey oO\n\nOSM A YP main v\n",
+      "marker_ocr_text_path": "/Users/kimdohyeong/Desktop/agent-bridge-portable-handoff/workspace/logs/codex_marker_presence_ocr.txt",
+      "cleanup_attempted": true,
+      "cleanup_success": true,
+      "cleanup_marker_found": false,
+      "error": null
+    },
+    {
+      "candidate_name": "placeholder_center_left",
+      "candidate_family": "placeholder",
+      "click_point": [
+        2038,
+        1215
+      ],
+      "click_point_safe": true,
+      "click_attempted": true,
+      "click_succeeded": true,
+      "typed_marker_attempted": true,
+      "typed_marker_succeeded": true,
+      "marker_found": false,
+      "marker_confidence": 0.0,
+      "marker_match_text": null,
+      "marker_ocr_text": "+ Oma Y O ssnieeey oO\n\nOSM A YP main v\n",
+      "marker_ocr_text_path": "/Users/kimdohyeong/Desktop/agent-bridge-portable-handoff/workspace/logs/codex_marker_presence_ocr.txt",
+      "cleanup_attempted": true,
+      "cleanup_success": true,
+      "cleanup_marker_found": false,
+      "error": null
+    },
+    {
+      "candidate_name": "placeholder_center_right",
+      "candidate_family": "placeholder",
+      "click_point": [
+        2249,
+        1215
+      ],
+      "click_point_safe": true,
+      "click_attempted": true,
+      "click_succeeded": true,
+      "typed_marker_attempted": true,
+      "typed_marker_succeeded": true,
+      "marker_found": false,
+      "marker_confidence": 0.0,
+      "marker_match_text": null,
+      "marker_ocr_text": "+ Oma Y O ssnieeey oO\n\nOSM A YP main v\n",
+      "marker_ocr_text_path": "/Users/kimdohyeong/Desktop/agent-bridge-portable-handoff/workspace/logs/codex_marker_presence_ocr.txt",
+      "cleanup_attempted": true,
+      "cleanup_success": true,
+      "cleanup_marker_found": false,
+      "error": null
+    },
+    {
+      "candidate_name": "plus_anchor_y_offset_50",
+      "candidate_family": "plus_anchor",
+      "click_point": [
+        1813,
+        1171
+      ],
+      "click_point_safe": true,
+      "click_attempted": true,
+      "click_succeeded": true,
+      "typed_marker_attempted": true,
+      "typed_marker_succeeded": true,
+      "marker_found": false,
+      "marker_confidence": 0.0,
+      "marker_match_text": null,
+      "marker_ocr_text": "+ OBB Y \u00ae werRES 4 (\nOB Bw ae v\n\n\u00ae main v\n",
+      "marker_ocr_text_path": "/Users/kimdohyeong/Desktop/agent-bridge-portable-handoff/workspace/logs/codex_marker_presence_ocr.txt",
+      "cleanup_attempted": true,
+      "cleanup_success": true,
+      "cleanup_marker_found": false,
+      "error": null
+    },
+    {
+      "candidate_name": "plus_anchor_y_offset_70",
+      "candidate_family": "plus_anchor",
+      "click_point": [
+        1813,
+        1151
+      ],
+      "click_point_safe": true,
+      "click_attempted": true,
+      "click_succeeded": true,
+      "typed_marker_attempted": true,
+      "typed_marker_succeeded": true,
+      "marker_found": false,
+      "marker_confidence": 0.0,
+      "marker_match_text": null,
+      "marker_ocr_text": "+ Oma Y O ssnieeey oO\n\nOSM A YP main v\n",
+      "marker_ocr_text_path": "/Users/kimdohyeong/Desktop/agent-bridge-portable-handoff/workspace/logs/codex_marker_presence_ocr.txt",
+      "cleanup_attempted": true,
+      "cleanup_success": true,
+      "cleanup_marker_found": false,
+      "error": null
+    },
+    {
+      "candidate_name": "plus_anchor_y_offset_90",
+      "candidate_family": "plus_anchor",
+      "click_point": [
+        1813,
+        1131
+      ],
+      "click_point_safe": true,
+      "click_attempted": true,
+      "click_succeeded": true,
+      "typed_marker_attempted": true,
+      "typed_marker_succeeded": true,
+      "marker_found": false,
+      "marker_confidence": 0.0,
+      "marker_match_text": null,
+      "marker_ocr_text": "+ Oma Y O ssnieeey oO\n\nOSM A YP main v\n",
+      "marker_ocr_text_path": "/Users/kimdohyeong/Desktop/agent-bridge-portable-handoff/workspace/logs/codex_marker_presence_ocr.txt",
+      "cleanup_attempted": true,
+      "cleanup_success": true,
+      "cleanup_marker_found": false,
+      "error": null
+    },
+    {
+      "candidate_name": "plus_anchor_y_offset_110",
+      "candidate_family": "plus_anchor",
+      "click_point": [
+        1813,
+        1111
+      ],
+      "click_point_safe": true,
+      "click_attempted": true,
+      "click_succeeded": true,
+      "typed_marker_attempted": true,
+      "typed_marker_succeeded": true,
+      "marker_found": false,
+      "marker_confidence": 0.0,
+      "marker_match_text": null,
+      "marker_ocr_text": "+ Oma Y O ssnieeey oO\n\nQe YP main v\n",
+      "marker_ocr_text_path": "/Users/kimdohyeong/Desktop/agent-bridge-portable-handoff/workspace/logs/codex_marker_presence_ocr.txt",
+      "cleanup_attempted": true,
+      "cleanup_success": true,
+      "cleanup_marker_found": false,
+      "error": null
+    },
+    {
+      "candidate_name": "composer_band_center_left",
+      "candidate_family": "composer_band",
+      "click_point": [
+        2038,
+        1215
+      ],
+      "click_point_safe": true,
+      "click_attempted": true,
+      "click_succeeded": true,
+      "typed_marker_attempted": true,
+      "typed_marker_succeeded": true,
+      "marker_found": false,
+      "marker_confidence": 0.0,
+      "marker_match_text": null,
+      "marker_ocr_text": "+ Oma Y O ssnieeey oO\n\nQe YP main v\n",
+      "marker_ocr_text_path": "/Users/kimdohyeong/Desktop/agent-bridge-portable-handoff/workspace/logs/codex_marker_presence_ocr.txt",
+      "cleanup_attempted": true,
+      "cleanup_success": true,
+      "cleanup_marker_found": false,
+      "error": null
+    },
+    {
+      "candidate_name": "composer_band_placeholder_area",
+      "candidate_family": "composer_band",
+      "click_point": [
+        2144,
+        1215
+      ],
+      "click_point_safe": true,
+      "click_attempted": true,
+      "click_succeeded": true,
+      "typed_marker_attempted": true,
+      "typed_marker_succeeded": true,
+      "marker_found": false,
+      "marker_confidence": 0.0,
+      "marker_match_text": null,
+      "marker_ocr_text": "+ Oma Y O ssnieeey oO\n\nQe YP main v\n",
+      "marker_ocr_text_path": "/Users/kimdohyeong/Desktop/agent-bridge-portable-handoff/workspace/logs/codex_marker_presence_ocr.txt",
+      "cleanup_attempted": true,
+      "cleanup_success": true,
+      "cleanup_marker_found": false,
+      "error": null
+    },
+    {
+      "candidate_name": "composer_band_above_plus",
+      "candidate_family": "composer_band",
+      "click_point": [
+        1820,
+        1179
+      ],
+      "click_point_safe": true,
+      "click_attempted": true,
+      "click_succeeded": true,
+      "typed_marker_attempted": true,
+      "typed_marker_succeeded": true,
+      "marker_found": false,
+      "marker_confidence": 0.0,
+      "marker_match_text": null,
+      "marker_ocr_text": "+ OBB Y \u00ae werRES 4 (\nO BwoIM aet v\n\n\u00ae main v\n",
+      "marker_ocr_text_path": "/Users/kimdohyeong/Desktop/agent-bridge-portable-handoff/workspace/logs/codex_marker_presence_ocr.txt",
+      "cleanup_attempted": true,
+      "cleanup_success": true,
+      "cleanup_marker_found": false,
+      "error": null
+    },
+    {
+      "candidate_name": "owner_reviewed:composer_placeholder_center",
+      "candidate_family": "owner_reviewed",
+      "click_point": [
+        2160,
+        1155
+      ],
+      "click_point_safe": true,
+      "click_attempted": true,
+      "click_succeeded": true,
+      "typed_marker_attempted": true,
+      "typed_marker_succeeded": true,
+      "marker_found": false,
+      "marker_confidence": 0.0,
+      "marker_match_text": null,
+      "marker_ocr_text": "+ Oma Y O ssnieeey oO\n\nQe YP main v\n",
+      "marker_ocr_text_path": "/Users/kimdohyeong/Desktop/agent-bridge-portable-handoff/workspace/logs/codex_marker_presence_ocr.txt",
+      "cleanup_attempted": true,
+      "cleanup_success": true,
+      "cleanup_marker_found": false,
+      "error": null
+    },
+    {
+      "candidate_name": "owner_reviewed:composer_text_left",
+      "candidate_family": "owner_reviewed",
+      "click_point": [
+        2112,
+        1155
+      ],
+      "click_point_safe": true,
+      "click_attempted": true,
+      "click_succeeded": true,
+      "typed_marker_attempted": true,
+      "typed_marker_succeeded": true,
+      "marker_found": false,
+      "marker_confidence": 0.0,
+      "marker_match_text": null,
+      "marker_ocr_text": "+ Oma Y O ssnieeey oO\n\nQe YP main v\n",
+      "marker_ocr_text_path": "/Users/kimdohyeong/Desktop/agent-bridge-portable-handoff/workspace/logs/codex_marker_presence_ocr.txt",
+      "cleanup_attempted": true,
+      "cleanup_success": true,
+      "cleanup_marker_found": false,
+      "error": null
+    },
+    {
+      "candidate_name": "owner_reviewed:composer_text_mid",
+      "candidate_family": "owner_reviewed",
+      "click_point": [
+        2200,
+        1155
+      ],
+      "click_point_safe": true,
+      "click_attempted": true,
+      "click_succeeded": true,
+      "typed_marker_attempted": true,
+      "typed_marker_succeeded": true,
+      "marker_found": false,
+      "marker_confidence": 0.0,
+      "marker_match_text": null,
+      "marker_ocr_text": "+ Oma Y O ssnieeey oO\n\nQe YP main v\n",
+      "marker_ocr_text_path": "/Users/kimdohyeong/Desktop/agent-bridge-portable-handoff/workspace/logs/codex_marker_presence_ocr.txt",
+      "cleanup_attempted": true,
+      "cleanup_success": true,
+      "cleanup_marker_found": false,
+      "error": null
+    },
+    {
+      "candidate_name": "owner_reviewed:composer_above_plus_high",
+      "candidate_family": "owner_reviewed",
+      "click_point": [
+        1813,
+        1091
+      ],
+      "click_point_safe": false,
+      "click_attempted": false,
+      "click_succeeded": false,
+      "typed_marker_attempted": false,
+      "typed_marker_succeeded": false,
+      "marker_found": null,
+      "marker_confidence": null,
+      "marker_match_text": null,
+      "marker_ocr_text": "",
+      "marker_ocr_text_path": null,
+      "cleanup_attempted": false,
+      "cleanup_success": null,
+      "cleanup_marker_found": null,
+      "error": "outside safe composer band"
+    },
+    {
+      "candidate_name": "owner_reviewed:composer_above_plus_mid",
+      "candidate_family": "owner_reviewed",
+      "click_point": [
+        1893,
+        1121
+      ],
+      "click_point_safe": false,
+      "click_attempted": false,
+      "click_succeeded": false,
+      "typed_marker_attempted": false,
+      "typed_marker_succeeded": false,
+      "marker_found": null,
+      "marker_confidence": null,
+      "marker_match_text": null,
+      "marker_ocr_text": "",
+      "marker_ocr_text_path": null,
+      "cleanup_attempted": false,
+      "cleanup_success": null,
+      "cleanup_marker_found": null,
+      "error": "outside safe composer band"
+    },
+    {
+      "candidate_name": "owner_reviewed:composer_text_left_low",
+      "candidate_family": "owner_reviewed",
+      "click_point": [
+        1856,
+        1176
+      ],
+      "click_point_safe": true,
+      "click_attempted": true,
+      "click_succeeded": true,
+      "typed_marker_attempted": true,
+      "typed_marker_succeeded": true,
+      "marker_found": false,
+      "marker_confidence": 0.0,
+      "marker_match_text": null,
+      "marker_ocr_text": "+ OBB Y \u00ae werRES 4 (\nO BwoIM aet v\n\n\u00ae main v\n",
+      "marker_ocr_text_path": "/Users/kimdohyeong/Desktop/agent-bridge-portable-handoff/workspace/logs/codex_marker_presence_ocr.txt",
+      "cleanup_attempted": true,
+      "cleanup_success": true,
+      "cleanup_marker_found": false,
+      "error": null
+    },
+    {
+      "candidate_name": "owner_reviewed:composer_text_left_mid_low",
+      "candidate_family": "owner_reviewed",
+      "click_point": [
+        1904,
+        1176
+      ],
+      "click_point_safe": true,
+      "click_attempted": true,
+      "click_succeeded": true,
+      "typed_marker_attempted": true,
+      "typed_marker_succeeded": true,
+      "marker_found": false,
+      "marker_confidence": 0.0,
+      "marker_match_text": null,
+      "marker_ocr_text": "+ OBB Y \u00ae werRES 4 (\nO BwoIM aet v\n\n\u00ae main v\n",
+      "marker_ocr_text_path": "/Users/kimdohyeong/Desktop/agent-bridge-portable-handoff/workspace/logs/codex_marker_presence_ocr.txt",
+      "cleanup_attempted": true,
+      "cleanup_success": true,
+      "cleanup_marker_found": false,
+      "error": null
+    },
+    {
+      "candidate_name": "owner_reviewed:composer_text_quarter_low",
+      "candidate_family": "owner_reviewed",
+      "click_point": [
+        1960,
+        1176
+      ],
+      "click_point_safe": true,
+      "click_attempted": true,
+      "click_succeeded": true,
+      "typed_marker_attempted": true,
+      "typed_marker_succeeded": true,
+      "marker_found": false,
+      "marker_confidence": 0.0,
+      "marker_match_text": null,
+      "marker_ocr_text": "+ OBB Y \u00ae werRES 4 (\nO BwoIM aet v\n\n\u00ae main v\n",
+      "marker_ocr_text_path": "/Users/kimdohyeong/Desktop/agent-bridge-portable-handoff/workspace/logs/codex_marker_presence_ocr.txt",
+      "cleanup_attempted": true,
+      "cleanup_success": true,
+      "cleanup_marker_found": false,
+      "error": null
+    },
+    {
+      "candidate_name": "owner_reviewed:plus_anchor_text_left",
+      "candidate_family": "owner_reviewed",
+      "click_point": [
+        1858,
+        1173
+      ],
+      "click_point_safe": true,
+      "click_attempted": true,
+      "click_succeeded": true,
+      "typed_marker_attempted": true,
+      "typed_marker_succeeded": true,
+      "marker_found": false,
+      "marker_confidence": 0.0,
+      "marker_match_text": null,
+      "marker_ocr_text": "+ OBB Y \u00ae werRES 4 (\nO BwoIM aet v\n\n\u00ae main v\n",
+      "marker_ocr_text_path": "/Users/kimdohyeong/Desktop/agent-bridge-portable-handoff/workspace/logs/codex_marker_presence_ocr.txt",
+      "cleanup_attempted": true,
+      "cleanup_success": true,
+      "cleanup_marker_found": false,
+      "error": null
+    },
+    {
+      "candidate_name": "owner_reviewed:plus_anchor_text_mid",
+      "candidate_family": "owner_reviewed",
+      "click_point": [
+        1933,
+        1173
+      ],
+      "click_point_safe": true,
+      "click_attempted": true,
+      "click_succeeded": true,
+      "typed_marker_attempted": true,
+      "typed_marker_succeeded": true,
+      "marker_found": false,
+      "marker_confidence": 0.0,
+      "marker_match_text": null,
+      "marker_ocr_text": "+ OBB Y \u00ae werRES 4 (\nO BwoIM aet v\n\n\u00ae main v\n",
+      "marker_ocr_text_path": "/Users/kimdohyeong/Desktop/agent-bridge-portable-handoff/workspace/logs/codex_marker_presence_ocr.txt",
+      "cleanup_attempted": true,
+      "cleanup_success": true,
+      "cleanup_marker_found": false,
+      "error": null
+    }
+  ]
+}

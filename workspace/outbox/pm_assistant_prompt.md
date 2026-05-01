@@ -1,143 +1,271 @@
 You are the PM assistant for Agent Bridge.
 
+Paste verification sentinel:
+AGENT_BRIDGE_PM_PROMPT_SENTINEL: bridge_1777622444_706235
+
 Read the full latest agent report below and return the next Codex instruction.
 
 Response contract:
 - Return exactly one fenced Markdown code block.
-- The fence info string must be CODEX_NEXT_PROMPT.
-- Put only the next Codex instruction inside that block.
+- The fence info string must start with CODEX_NEXT_PROMPT.
+- The first non-empty line inside the block must be exactly CODEX_NEXT_PROMPT.
 - Do not include prose before or after the block.
+- Put only that CODEX_NEXT_PROMPT marker line and the next Codex instruction inside that block.
+- Do not include CODEX_NEXT_PROMPT anywhere else.
 - Keep the instruction generic to Agent Bridge and do not add downstream project assumptions.
+
+The body marker is required because native ChatGPT Mac response-copy may copy only the rendered code block body and omit the Markdown fence info string.
+
+If the report contains AGENT_BRIDGE_GUI_ROUNDTRIP_TEST, the returned Codex prompt must be a safe no-op validation prompt. That no-op prompt must:
+- contain Task ID: AB-ROUNDTRIP-NOOP-VALIDATION;
+- explicitly say do not modify source code and avoid code changes;
+- explicitly say do not mutate GitHub;
+- explicitly say do not send Gmail;
+- explicitly say do not push commits;
+- explicitly say do not auto-merge;
+- ask only to write a short success note to workspace/reports/latest_agent_report.md;
+- require the success note title to be exactly: # Agent Report: GUI Roundtrip No-Op Validation Success.
 
 Latest agent report:
 
-# Agent Report: External GUI Runner Mode
+# Agent Report: Report Change Requested
 
 ## Summary
 
-Added an external GUI runner mode so Agent Bridge GUI automation can be launched from a normal macOS Terminal instead of the active Codex execution context. The runner refuses to operate when Codex sandbox markers are present, runs environment and activation preflights first, and only then runs the bounded one-cycle report roundtrip.
+Report change requested by owner.
 
-No full GUI roundtrip was run from Codex. No paste, submit, GitHub, Gmail, push, merge, or downstream source-code action was attempted.
+This update changes only `workspace/reports/latest_agent_report.md` so the watched report content changes.
 
-## Files Changed
+## Status
 
-- `agent_bridge/gui/external_runner.py`
-- `agent_bridge/cli.py`
-- `scripts/run_gui_roundtrip_external.sh`
-- `docs/EXTERNAL_GUI_RUNNER.md`
-- `tests/test_external_runner.py`
-- `README.md`
-- `docs/07_CLI_SPEC.md`
-- `codex_skill/agent-bridge/SKILL.md`
-- `workspace/reports/latest_agent_report.md`
+- Source code changes: none
+- GitHub mutation: none
+- Gmail mutation: none
+- Push or auto-merge: none
+- Long-running command: none
+- Tests run: none, not applicable for report-only change
 
-## External Runner Design
+## Timestamp
 
-Codex prepares Agent Bridge code, queue state, reports, and staged prompts. A normal macOS Terminal process is responsible for GUI side effects because LaunchServices app resolution can fail inside the Codex sandbox.
+2026-05-01 16:57:50 KST
+# Agent Report: Report Change Requested
 
-The shared state remains the repository workspace:
+## Summary
 
-- `workspace/state/`
-- `workspace/queue/`
-- `workspace/inbox/`
-- `workspace/outbox/`
-- `workspace/reports/`
-- `workspace/logs/`
+Report change requested by owner.
 
-## Sandbox Detection
+This update changes only `workspace/reports/latest_agent_report.md` so the watched report content changes.
 
-The external runner checks for these markers:
+## Status
 
-- `CODEX_SANDBOX`
-- `CODEX_SHELL`
-- `CODEX_THREAD_ID`
+- Source code changes: none
+- GitHub mutation: none
+- Gmail mutation: none
+- Push or auto-merge: none
+- Long-running command: none
+- Tests run: none, not applicable for report-only change
 
-If any are set, `scripts/run_gui_roundtrip_external.sh` exits before app activation, clipboard access, paste, submit, or roundtrip launch.
+## Timestamp
 
-The required preflight was run from the active Codex task process and correctly reported:
+2026-05-01 16:57:50 KST
+# Agent Report: Report Change Requested
 
-- Running inside Codex sandbox: yes.
-- `CODEX_SANDBOX`: set.
-- `CODEX_SHELL`: set.
-- `CODEX_THREAD_ID`: set.
+## Summary
 
-## App Activation Preflight
+Report change requested by owner.
 
-Added:
+This update changes only `workspace/reports/latest_agent_report.md` so the watched report content changes.
 
-```bash
-python -m agent_bridge.cli preflight-external-runner
-```
+## Status
 
-It reports:
+- Source code changes: none
+- GitHub mutation: none
+- Gmail mutation: none
+- Push or auto-merge: none
+- Long-running command: none
+- Tests run: none, not applicable for report-only change
 
-- Codex sandbox marker status.
-- `pbcopy` and `pbpaste` availability.
-- AppleScript resolution for the configured PM assistant app.
-- AppleScript resolution for the configured local-agent app.
-- Recommended next command.
+## Timestamp
 
-From the active Codex context:
+2026-05-01 16:57:50 KST
+# Agent Report: Report Change Requested
 
-- `pbcopy`: available at `/usr/bin/pbcopy`.
-- `pbpaste`: available at `/usr/bin/pbpaste`.
-- AppleScript resolution for `ChatGPT`: failed.
-- AppleScript resolution for `Codex`: failed.
-- Recommended command: run `bash scripts/run_gui_roundtrip_external.sh` from normal Terminal.
+## Summary
 
-## Runner Script
+Report change requested by owner.
 
-Added:
+This update changes only `workspace/reports/latest_agent_report.md` so the watched report content changes.
 
-```bash
-bash scripts/run_gui_roundtrip_external.sh
-```
+## Status
 
-The script:
+- Source code changes: none
+- GitHub mutation: none
+- Gmail mutation: none
+- Push or auto-merge: none
+- Long-running command: none
+- Tests run: none, not applicable for report-only change
 
-1. Refuses Codex sandbox execution.
-2. Chooses `.venv/bin/python` when available.
-3. Runs `preflight-external-runner`.
-4. Runs PM assistant activation preflight.
-5. Runs local-agent activation preflight.
-6. Runs the bounded report roundtrip only after preflights pass:
+## Timestamp
 
-```bash
-python -m agent_bridge.cli dogfood-report-roundtrip \
-  --auto-confirm \
-  --max-cycles 1 \
-  --max-runtime-seconds 180
-```
+2026-05-01 16:57:50 KST
+# Agent Report: Report Change Requested
 
-## Tests Run
+## Summary
 
-- `.venv/bin/python -m pytest`
-- `.venv/bin/ruff check .`
-- `.venv/bin/python -m agent_bridge.cli preflight-external-runner`
-- `PATH="$PWD/.venv/bin:$PATH" bash scripts/self_test.sh`
-- `bash portable_module/.agent-bridge/scripts/self_test.sh`
+Report change requested by owner.
 
-## Test Results
+This update changes only `workspace/reports/latest_agent_report.md` so the watched report content changes.
 
-- `pytest`: 110 passed.
-- `ruff`: all checks passed.
-- `preflight-external-runner`: completed and reported the current Codex sandbox state.
-- Standalone self-test: passed.
-- Portable self-test: passed.
+## Status
 
-## Known Limitations
+- Source code changes: none
+- GitHub mutation: none
+- Gmail mutation: none
+- Push or auto-merge: none
+- Long-running command: none
+- Tests run: none, not applicable for report-only change
 
-The external runner was implemented and tested, but the full live GUI roundtrip was not run because this task explicitly forbids retrying the full roundtrip from inside Codex.
+## Timestamp
 
-The script must be run manually from a normal macOS Terminal. If activation preflight still fails there, the script stops before the roundtrip.
+2026-05-01 16:57:50 KST
+# Agent Report: Report Change Requested
 
-## Next Recommended Task
+## Summary
 
-Run this manually from a normal macOS Terminal:
+Report change requested by owner.
 
-```bash
-cd /Users/kimdohyeong/Desktop/agent-bridge-portable-handoff
-bash scripts/run_gui_roundtrip_external.sh
-```
+This update changes only `workspace/reports/latest_agent_report.md` so the watched report content changes.
 
-If both activation preflights pass, the script will run the bounded one-cycle report-to-PM-to-local-agent roundtrip. If either preflight fails, use the diagnostic output to repair macOS app resolution before retrying.
+## Status
+
+- Source code changes: none
+- GitHub mutation: none
+- Gmail mutation: none
+- Push or auto-merge: none
+- Long-running command: none
+- Tests run: none, not applicable for report-only change
+
+## Timestamp
+
+2026-05-01 16:57:50 KST
+# Agent Report: Report Change Requested
+
+## Summary
+
+Report change requested by owner.
+
+This update changes only `workspace/reports/latest_agent_report.md` so the watched report content changes.
+
+## Status
+
+- Source code changes: none
+- GitHub mutation: none
+- Gmail mutation: none
+- Push or auto-merge: none
+- Long-running command: none
+- Tests run: none, not applicable for report-only change
+
+## Timestamp
+
+2026-05-01 16:57:50 KST
+# Agent Report: Report Change Requested
+
+## Summary
+
+Report change requested by owner.
+
+This update changes only `workspace/reports/latest_agent_report.md` so the watched report content changes.
+
+## Status
+
+- Source code changes: none
+- GitHub mutation: none
+- Gmail mutation: none
+- Push or auto-merge: none
+- Long-running command: none
+- Tests run: none, not applicable for report-only change
+
+## Timestamp
+
+2026-05-01 16:57:50 KST
+# Agent Report: Report Change Requested
+
+## Summary
+
+Report change requested by owner.
+
+This update changes only `workspace/reports/latest_agent_report.md` so the watched report content changes.
+
+## Status
+
+- Source code changes: none
+- GitHub mutation: none
+- Gmail mutation: none
+- Push or auto-merge: none
+- Long-running command: none
+- Tests run: none, not applicable for report-only change
+
+## Timestamp
+
+2026-05-01 16:57:50 KST
+# Agent Report: Report Change Requested
+
+## Summary
+
+Report change requested by owner.
+
+This update changes only `workspace/reports/latest_agent_report.md` so the watched report content changes.
+
+## Status
+
+- Source code changes: none
+- GitHub mutation: none
+- Gmail mutation: none
+- Push or auto-merge: none
+- Long-running command: none
+- Tests run: none, not applicable for report-only change
+
+## Timestamp
+
+2026-05-01 16:57:50 KST
+# Agent Report: Report Change Requested
+
+## Summary
+
+Report change requested by owner.
+
+This update changes only `workspace/reports/latest_agent_report.md` so the watched report content changes.
+
+## Status
+
+- Source code changes: none
+- GitHub mutation: none
+- Gmail mutation: none
+- Push or auto-merge: none
+- Long-running command: none
+- Tests run: none, not applicable for report-only change
+
+## Timestamp
+
+2026-05-01 16:57:50 KST
+# Agent Report: Report Change Requested
+
+## Summary
+
+Report change requested by owner.
+
+This update changes only `workspace/reports/latest_agent_report.md` so the watched report content changes.
+
+## Status
+
+- Source code changes: none
+- GitHub mutation: none
+- Gmail mutation: none
+- Push or auto-merge: none
+- Long-running command: none
+- Tests run: none, not applicable for report-only change
+
+## Timestamp
+
+2026-05-01 16:57:50 KST
+ 

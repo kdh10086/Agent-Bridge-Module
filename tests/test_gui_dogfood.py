@@ -122,11 +122,12 @@ def test_gui_adapter_calls_happen_in_expected_order(tmp_path: Path):
     assert result.completed
     assert result.reason == "MAX_CYCLES_REACHED"
     assert gui.actions == [
-        "activate:Google Chrome",
+        "activate:ChatGPT",
         "copy_text",
         "paste",
         "submit",
         "wait:7",
+        "activate:ChatGPT",
         "copy_response",
         "activate:Codex",
         "copy_text",

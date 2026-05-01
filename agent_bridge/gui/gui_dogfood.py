@@ -180,7 +180,12 @@ def run_gui_bridge_dogfood(
             log.append("pm_response_wait_started", timeout_seconds=config.pm_response_timeout_seconds)
             gui.wait_for_response(config.pm_response_timeout_seconds)
             guard.check()
+            log.append("pm_response_generation_finished")
+            log.append("pm_response_copy_phase_started")
+            gui.activate_app(config.targets.pm_assistant)
+            log.append("pm_target_reactivated_before_copy", app_name=config.targets.pm_assistant.app_name)
             pm_response = gui.copy_response_text()
+            log.append("pm_response_copy_clicked", length=len(pm_response))
             log.append("pm_response_copied", length=len(pm_response))
             pm_response_path = workspace_dir / "outbox" / "pm_response.md"
             pm_response_path.parent.mkdir(parents=True, exist_ok=True)
@@ -201,7 +206,7 @@ def run_gui_bridge_dogfood(
                 id=f"cmd_{uuid4().hex[:12]}",
                 type=CommandType.CHATGPT_PM_NEXT_TASK,
                 source="pm_assistant_gui_dogfood",
-                payload_path=str(pm_response_path),
+                prompt_path=str(pm_response_path),
                 dedupe_key=f"pm_gui_response:{hashlib.sha256(pm_response.encode()).hexdigest()}",
             )
             added = command_queue.enqueue(command)
@@ -242,6 +247,8 @@ def run_gui_bridge_dogfood(
                 return blocked
 
             guard.check()
+            log.append("local_agent_phase_started", command_id=dispatch_result.command.id)
+            log.append("codex_activation_started", command_id=dispatch_result.command.id)
             gui.activate_app(config.targets.local_agent)
             log.append("local_agent_app_activated", app_name=config.targets.local_agent.app_name)
             guard.check()

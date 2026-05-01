@@ -26,16 +26,21 @@ cp "${SOURCE_FILE}" "${CANONICAL_ABS}"
 AB_COMMAND_TYPE="GITHUB_REVIEW_FIX" \
 AB_PRIORITY="70" \
 AB_SOURCE="portable_ingest_review" \
-AB_PAYLOAD_PATH="${CANONICAL_REL}" \
+AB_PROMPT_PATH="${CANONICAL_REL}" \
 AB_DIGEST_PATH="${CANONICAL_ABS}" \
 AB_QUEUE_DIR="${AB_WORKSPACE}/queue" \
+AB_SCRIPT_DIR="${SCRIPT_DIR}" \
 python3 - <<'PY'
 import hashlib
 import json
 import os
+import sys
 import uuid
 from datetime import datetime, timezone
 from pathlib import Path
+
+sys.path.insert(0, os.environ["AB_SCRIPT_DIR"])
+from queue_lock import command_prompt_path, portable_queue_lock, read_jsonl, write_jsonl
 
 queue_dir = Path(os.environ["AB_QUEUE_DIR"])
 queue_dir.mkdir(parents=True, exist_ok=True)
@@ -43,20 +48,7 @@ pending_path = queue_dir / "pending_commands.jsonl"
 digest_path = Path(os.environ["AB_DIGEST_PATH"])
 dedupe_key = "portable_review:" + hashlib.sha256(digest_path.read_bytes()).hexdigest()[:24]
 
-def read_jsonl(path: Path) -> list[dict]:
-    if not path.exists():
-        return []
-    rows = []
-    for line in path.read_text(encoding="utf-8").splitlines():
-        if line.strip():
-            rows.append(json.loads(line))
-    return rows
-
 existing = set()
-pending = read_jsonl(pending_path)
-for name in ["pending_commands.jsonl", "completed_commands.jsonl", "failed_commands.jsonl"]:
-    existing.update(row.get("dedupe_key") for row in read_jsonl(queue_dir / name))
-
 command = {
     "id": f"cmd_{uuid.uuid4().hex[:12]}",
     "type": os.environ["AB_COMMAND_TYPE"],
@@ -65,32 +57,42 @@ command = {
     "created_at": datetime.now(timezone.utc).isoformat(),
     "task_id": None,
     "pr_number": None,
-    "payload_path": os.environ["AB_PAYLOAD_PATH"],
+    "prompt_path": os.environ["AB_PROMPT_PATH"],
+    "prompt_text": None,
     "requires_user_approval": False,
     "safety_flags": [],
     "dedupe_key": dedupe_key,
     "status": "pending",
     "metadata": {},
 }
-if dedupe_key in existing:
-    print("Duplicate review digest ignored.")
-else:
-    pending = [
-        row for row in pending
-        if not (
-            row.get("type") == os.environ["AB_COMMAND_TYPE"]
-            and row.get("payload_path") == os.environ["AB_PAYLOAD_PATH"]
-        )
-    ]
-    pending.append(command)
-    pending_path.write_text(
-        "".join(json.dumps(row, ensure_ascii=False, separators=(",", ":")) + "\n" for row in pending),
-        encoding="utf-8",
-    )
-    print("Review digest command enqueued.")
+with portable_queue_lock(queue_dir):
+    pending = read_jsonl(pending_path)
+    for name in [
+        "pending_commands.jsonl",
+        "completed_commands.jsonl",
+        "failed_commands.jsonl",
+        "blocked_commands.jsonl",
+    ]:
+        existing.update(row.get("dedupe_key") for row in read_jsonl(queue_dir / name))
+    in_progress_path = queue_dir / "in_progress.json"
+    if in_progress_path.exists():
+        existing.add(json.loads(in_progress_path.read_text(encoding="utf-8")).get("dedupe_key"))
+    if dedupe_key in existing:
+        print("Duplicate review digest ignored.")
+    else:
+        pending = [
+            row for row in pending
+            if not (
+                row.get("type") == os.environ["AB_COMMAND_TYPE"]
+                and command_prompt_path(row) == os.environ["AB_PROMPT_PATH"]
+            )
+        ]
+        pending.append(command)
+        write_jsonl(pending_path, pending)
+        print("Review digest command enqueued.")
 print(json.dumps(command, ensure_ascii=False, indent=2))
 PY
 
-ab_log_event "portable_review_digest_ingested" "{\"payload_path\":\"${CANONICAL_REL}\"}"
+ab_log_event "portable_review_digest_ingested" "{\"prompt_path\":\"${CANONICAL_REL}\"}"
 echo "Canonical review digest: ${CANONICAL_REL}"
 echo "No dispatch was attempted."

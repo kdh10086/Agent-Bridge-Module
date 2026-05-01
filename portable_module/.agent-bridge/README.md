@@ -103,6 +103,18 @@ and enqueues `CI_FAILURE_FIX` with priority `80`.
 
 ## Queue and Dispatch
 
+Portable queue helpers use the same advisory queue lock file as the standalone
+Python queue:
+
+```text
+.agent-bridge/workspace/queue/queue.lock
+```
+
+The Python `CommandQueue` remains canonical. Portable shell helpers only use
+direct JSONL access for the portable MVP and protect those accesses with the
+shared lock. New portable records write `prompt_path`; legacy `payload_path`
+records remain readable.
+
 List pending commands:
 
 ```bash
@@ -122,6 +134,24 @@ The prompt is written to:
 ```
 
 Real GUI dispatch is not implemented in the portable MVP.
+
+Malformed queue records are quarantined in standalone mode to:
+
+```text
+workspace/queue/malformed_commands.jsonl
+```
+
+From the standalone Agent Bridge repository, inspect or dry-run repair with:
+
+```bash
+python -m agent_bridge.cli queue malformed list
+python -m agent_bridge.cli queue malformed inspect 1
+python -m agent_bridge.cli queue repair
+python -m agent_bridge.cli queue repair --apply
+```
+
+Repair is conservative: `--apply` re-enqueues only schema-valid records and
+leaves the original quarantine entry in place.
 
 ## Reports
 

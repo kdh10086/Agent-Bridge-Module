@@ -13,3 +13,7 @@ Requires-Dist: pytest>=8.0; extra == "dev"
 Requires-Dist: ruff>=0.6; extra == "dev"
 Provides-Extra: gui
 Requires-Dist: pyautogui>=0.9.54; extra == "gui"
+Requires-Dist: pillow>=10.0; extra == "gui"
+Requires-Dist: numpy>=1.26; extra == "gui"
+Requires-Dist: opencv-python>=4.9; extra == "gui"
+Requires-Dist: pytesseract>=0.3.13; extra == "gui"

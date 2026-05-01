@@ -1,0 +1,112 @@
+{
+  "active_app": "Codex",
+  "target_app": "Codex",
+  "accessibility_available": true,
+  "error": null,
+  "elements": [
+    {
+      "depth": 0,
+      "role": "AXWindow",
+      "subrole": "",
+      "title": "Codex",
+      "description": "",
+      "value": ""
+    },
+    {
+      "depth": 1,
+      "role": "AXGroup",
+      "subrole": "missing value",
+      "title": "Codex",
+      "description": "",
+      "value": ""
+    },
+    {
+      "depth": 1,
+      "role": "AXGroup",
+      "subrole": "missing value",
+      "title": "",
+      "description": "",
+      "value": ""
+    },
+    {
+      "depth": 1,
+      "role": "AXGroup",
+      "subrole": "missing value",
+      "title": "",
+      "description": "",
+      "value": ""
+    },
+    {
+      "depth": 1,
+      "role": "AXGroup",
+      "subrole": "missing value",
+      "title": "",
+      "description": "",
+      "value": ""
+    },
+    {
+      "depth": 1,
+      "role": "AXGroup",
+      "subrole": "missing value",
+      "title": "",
+      "description": "",
+      "value": ""
+    },
+    {
+      "depth": 1,
+      "role": "AXGroup",
+      "subrole": "missing value",
+      "title": "",
+      "description": "",
+      "value": ""
+    },
+    {
+      "depth": 1,
+      "role": "AXGroup",
+      "subrole": "missing value",
+      "title": "",
+      "description": "",
+      "value": ""
+    },
+    {
+      "depth": 1,
+      "role": "AXButton",
+      "subrole": "AXCloseButton",
+      "title": "missing value",
+      "description": "",
+      "value": ""
+    },
+    {
+      "depth": 1,
+      "role": "AXButton",
+      "subrole": "AXFullScreenButton",
+      "title": "missing value",
+      "description": "",
+      "value": ""
+    },
+    {
+      "depth": 1,
+      "role": "AXGroup",
+      "subrole": "",
+      "title": "",
+      "description": "",
+      "value": ""
+    },
+    {
+      "depth": 1,
+      "role": "AXGroup",
+      "subrole": "",
+      "title": "",
+      "description": "",
+      "value": ""
+    },
+    {
+      "depth": 1,
+      "role": "AXButton",
+      "subrole": "AXMinimizeButton",
+      "title": "missing value",
+      "description": "",
+      "value": ""
+    }
+  ]
+}

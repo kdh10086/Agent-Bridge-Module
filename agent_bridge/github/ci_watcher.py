@@ -36,7 +36,7 @@ def ingest_ci_fixture(
         type=CommandType.CI_FAILURE_FIX,
         source="ci_watcher",
         pr_number=digest.pr_number,
-        payload_path=str(digest_path),
+        prompt_path=str(digest_path),
         requires_user_approval=any(failure.requires_user_decision for failure in digest.failures),
         dedupe_key=digest.dedupe_key,
         metadata={
@@ -66,7 +66,7 @@ def command_from_ci_digest(digest: CIDigest, digest_path: Path) -> Command:
         type=CommandType.CI_FAILURE_FIX,
         source="ci_watcher",
         pr_number=digest.pr_number,
-        payload_path=str(digest_path),
+        prompt_path=str(digest_path),
         requires_user_approval=any(failure.requires_user_decision for failure in digest.failures),
         dedupe_key=digest.dedupe_key,
         metadata={

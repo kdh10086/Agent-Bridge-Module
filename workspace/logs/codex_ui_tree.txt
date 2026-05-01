@@ -1,0 +1,21 @@
+# Codex UI Tree Dump
+
+Target app: Codex
+Active app: Codex
+Accessibility available: yes
+Element count: 13
+
+## Elements
+- AXWindow title=Codex
+  - AXGroup subrole=missing value title=Codex
+  - AXGroup subrole=missing value
+  - AXGroup subrole=missing value
+  - AXGroup subrole=missing value
+  - AXGroup subrole=missing value
+  - AXGroup subrole=missing value
+  - AXGroup subrole=missing value
+  - AXButton subrole=AXCloseButton title=missing value
+  - AXButton subrole=AXFullScreenButton title=missing value
+  - AXGroup
+  - AXGroup
+  - AXButton subrole=AXMinimizeButton title=missing value

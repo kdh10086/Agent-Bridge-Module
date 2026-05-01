@@ -125,8 +125,8 @@ def test_activate_path_uses_mocked_activation_runner(tmp_path: Path):
 
     assert diagnostic.activation_result is not None
     assert diagnostic.activation_result.succeeded
-    assert diagnostic.activation_result.winning_strategy == "open-app-name"
+    assert diagnostic.activation_result.winning_strategy == "open-bundle-id"
     assert runner.commands == [
-        ["osascript", "-e", 'tell application "ActivationApp" to activate'],
-        ["open", "-a", "ActivationApp"],
+        ["osascript", "-e", 'tell application id "com.example.activation" to activate'],
+        ["open", "-b", "com.example.activation"],
     ]
